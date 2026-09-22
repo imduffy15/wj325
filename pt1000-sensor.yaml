@@ -1,0 +1,255 @@
+# Top-tank WJ325: factory conversion with board-specific two-point calibration.
+# Calibrated relative to the stock unit near 20 and 61 C; see FIRMWARE-ANALYSIS.md.
+esphome:
+  name: hot-water-tank-top
+  friendly_name: Hot Water Tank Top
+esp8266:
+  board: esp_wroom_02
+  
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  reboot_timeout: 12h
+  ap: {}
+
+captive_portal:
+
+web_server:
+
+api:
+  # Keep measuring and serving the web UI when Home Assistant is offline.
+  reboot_timeout: 0s
+
+ota:
+  platform: esphome
+
+logger:
+
+debug:
+  update_interval: 60s
+
+improv_serial:
+
+i2c:
+  sda: GPIO12
+  scl: GPIO14
+  scan: true
+
+ads1115:
+  - id: ads1115_1
+    address: 0x48
+    continuous_mode: false
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: debug
+    free:
+      name: "Free Heap"
+      entity_category: diagnostic
+
+  # Factory ADC settings; use native ESPHome polling and averaging.
+  - platform: ads1115
+    multiplexer: 'A0_GND'
+    gain: 6.144
+    resolution: 16_BITS
+    sample_rate: 64
+    ads1115_id: ads1115_1
+    name: "PT1000 Raw"
+    id: pt1000_raw
+    entity_category: diagnostic
+    device_class: voltage
+    state_class: measurement
+    accuracy_decimals: 6
+    update_interval: never
+    filters:
+      # Trigger six consecutive native ADS1115 conversions from the interval
+      # below. Publish their average once the sixth reading arrives.
+      - sliding_window_moving_average:
+          window_size: 6
+          send_every: 6
+          send_first_at: 6
+      - timeout: 30s
+    on_value:
+      - component.update: pt1000_voltage
+
+  - platform: template
+    name: "PT1000 Voltage"
+    id: pt1000_voltage
+    entity_category: diagnostic
+    device_class: voltage
+    state_class: measurement
+    unit_of_measurement: "V"
+    accuracy_decimals: 6
+    update_interval: never
+    lambda: |-
+      return id(pt1000_raw).state;
+    on_value:
+      - component.update: pt1000_temp
+
+  - platform: template
+    name: "PT1000 Temperature"
+    id: pt1000_temp
+    device_class: temperature
+    state_class: measurement
+    unit_of_measurement: "°C"
+    accuracy_decimals: 2
+    update_interval: never
+    # Recovered from wj325-backup.bin; see FIRMWARE-ANALYSIS.md.
+    # This board: two-point fit against stock using the same probe per comparison.
+    # Provisional near 20-61 C; this is not an independent absolute calibration.
+    lambda: |-
+      constexpr int32_t zero = 13;
+      constexpr int32_t full = 28767;
+      constexpr float vref = 3.4f;
+      constexpr float rzero = 30.0f;
+
+      float voltage = id(pt1000_voltage).state;
+      if (!std::isfinite(voltage) || voltage < 0.0f) return NAN;
+      if (voltage > vref) voltage = vref;
+      const int32_t count = static_cast<int32_t>((voltage / vref) * 32767.0f);
+      // Stock returns +/-888.889 for ADC limits. Report unavailable instead.
+      if (count <= 99 || count > 32667) return NAN;
+      const int32_t normalized = ((count - zero) * 32767) / (full - zero);
+
+      // Manufacturer's nonlinear correction, PT1000 / 600 C range branch.
+      // These are scaled table coordinates, not resistance values in ohms.
+      constexpr float series = 106539.0f;
+      const float zero_coordinate = rzero / 10.0f;
+      const float zero_voltage = (vref * zero_coordinate) / (series + zero_coordinate);
+      const float full_voltage = (vref * 65535.0f) / (series + 65535.0f);
+      const float scale = 32767.0f / (full_voltage - zero_voltage);
+      const float corrected_voltage = static_cast<float>(normalized) / scale + zero_voltage;
+      const float coordinate = (corrected_voltage * series) / (vref - corrected_voltage);
+
+      // Exact factory table: indices 0..800 correspond to -200..600 C.
+      // Keep in flash to avoid spending 1602 bytes of ESP8266 RAM.
+      static const uint16_t table[801] PROGMEM = {
+        3869, 3959, 4049, 4139, 4229, 4320, 4410, 4499, 4589, 4679, 4768, 4858,
+        4947, 5037, 5126, 5215, 5305, 5394, 5483, 5572, 5660, 5749, 5838, 5927,
+        6016, 6104, 6193, 6281, 6369, 6458, 6546, 6634, 6722, 6810, 6898, 6986,
+        7074, 7162, 7250, 7338, 7425, 7513, 7600, 7688, 7775, 7863, 7950, 8037,
+        8124, 8211, 8298, 8385, 8472, 8559, 8646, 8733, 8820, 8906, 8993, 9079,
+        9166, 9252, 9339, 9425, 9512, 9598, 9684, 9770, 9856, 9942, 10028, 10114,
+        10200, 10286, 10372, 10458, 10543, 10629, 10715, 10800, 10886, 10971, 11057, 11142,
+        11228, 11313, 11398, 11483, 11569, 11654, 11739, 11824, 11909, 11994, 12079, 12164,
+        12249, 12334, 12418, 12503, 12588, 12672, 12757, 12842, 12926, 13011, 13095, 13179,
+        13264, 13348, 13433, 13517, 13601, 13685, 13769, 13853, 13937, 14021, 14106, 14190,
+        14273, 14357, 14441, 14525, 14609, 14693, 14776, 14860, 14944, 15027, 15111, 15195,
+        15278, 15362, 15445, 15528, 15612, 15695, 15779, 15862, 15945, 16028, 16112, 16195,
+        16278, 16361, 16444, 16527, 16610, 16693, 16776, 16859, 16942, 17025, 17108, 17191,
+        17274, 17356, 17439, 17522, 17605, 17687, 17770, 17852, 17935, 18018, 18100, 18183,
+        18265, 18347, 18430, 18512, 18595, 18677, 18759, 18842, 18924, 19006, 19088, 19171,
+        19253, 19335, 19417, 19499, 19581, 19663, 19745, 19827, 19909, 19991, 20073, 20155,
+        20237, 20318, 20400, 20482, 20564, 20645, 20727, 20809, 20890, 20972, 21054, 21135,
+        21217, 21298, 21380, 21461, 21543, 21624, 21706, 21787, 21869, 21950, 22031, 22112,
+        22194, 22275, 22356, 22437, 22519, 22600, 22681, 22762, 22843, 22924, 23005, 23086,
+        23167, 23248, 23329, 23410, 23491, 23572, 23652, 23733, 23814, 23895, 23976, 24056,
+        24137, 24218, 24298, 24379, 24460, 24540, 24621, 24701, 24782, 24862, 24943, 25023,
+        25103, 25184, 25264, 25344, 25425, 25505, 25585, 25666, 25746, 25826, 25906, 25986,
+        26066, 26146, 26226, 26307, 26387, 26467, 26547, 26627, 26706, 26786, 26866, 26946,
+        27026, 27106, 27185, 27265, 27345, 27425, 27504, 27584, 27664, 27743, 27823, 27902,
+        27982, 28061, 28141, 28220, 28300, 28379, 28459, 28538, 28617, 28697, 28776, 28855,
+        28935, 29014, 29093, 29172, 29251, 29330, 29409, 29489, 29568, 29646, 29726, 29805,
+        29884, 29962, 30041, 30120, 30199, 30278, 30357, 30435, 30514, 30593, 30672, 30750,
+        30829, 30908, 30986, 31065, 31143, 31222, 31301, 31379, 31457, 31536, 31614, 31693,
+        31771, 31850, 31928, 32006, 32084, 32163, 32241, 32319, 32397, 32475, 32554, 32632,
+        32710, 32788, 32866, 32944, 33022, 33100, 33178, 33256, 33334, 33412, 33489, 33567,
+        33645, 33723, 33801, 33878, 33956, 34034, 34111, 34189, 34267, 34344, 34422, 34499,
+        34577, 34654, 34732, 34809, 34886, 34964, 35041, 35119, 35196, 35273, 35350, 35428,
+        35505, 35582, 35659, 35736, 35814, 35891, 35968, 36045, 36122, 36199, 36276, 36353,
+        36430, 36506, 36583, 36660, 36737, 36814, 36891, 36968, 37044, 37121, 37198, 37274,
+        37351, 37428, 37504, 37581, 37657, 37734, 37810, 37887, 37963, 38040, 38116, 38192,
+        38269, 38345, 38421, 38498, 38574, 38650, 38726, 38803, 38879, 38955, 39031, 39107,
+        39183, 39259, 39335, 39411, 39487, 39563, 39639, 39715, 39791, 39866, 39942, 40018,
+        40094, 40170, 40245, 40321, 40397, 40472, 40548, 40624, 40699, 40775, 40850, 40926,
+        41001, 41077, 41152, 41228, 41303, 41378, 41454, 41529, 41604, 41679, 41755, 41830,
+        41905, 41980, 42055, 42131, 42206, 42281, 42356, 42431, 42506, 42581, 42656, 42731,
+        42806, 42880, 42955, 43030, 43105, 43180, 43255, 43329, 43404, 43479, 43553, 43628,
+        43702, 43777, 43852, 43926, 44001, 44075, 44150, 44224, 44299, 44373, 44447, 44522,
+        44596, 44670, 44745, 44819, 44893, 44967, 45041, 45115, 45190, 45264, 45338, 45412,
+        45486, 45560, 45634, 45708, 45782, 45856, 45930, 46003, 46077, 46151, 46225, 46299,
+        46372, 46446, 46520, 46594, 46667, 46741, 46814, 46888, 46962, 47035, 47109, 47182,
+        47255, 47329, 47402, 47476, 47549, 47622, 47696, 47769, 47842, 47916, 47989, 48062,
+        48135, 48208, 48281, 48354, 48427, 48501, 48574, 48647, 48719, 48793, 48865, 48938,
+        49011, 49084, 49157, 49230, 49302, 49375, 49448, 49521, 49593, 49666, 49739, 49811,
+        49884, 49956, 50029, 50101, 50174, 50246, 50319, 50391, 50464, 50536, 50608, 50681,
+        50753, 50825, 50897, 50970, 51042, 51114, 51186, 51258, 51331, 51403, 51475, 51547,
+        51619, 51691, 51763, 51834, 51906, 51978, 52050, 52122, 52194, 52266, 52337, 52409,
+        52481, 52552, 52624, 52696, 52767, 52839, 52911, 52982, 53054, 53125, 53197, 53268,
+        53340, 53411, 53482, 53554, 53625, 53696, 53768, 53839, 53910, 53981, 54053, 54124,
+        54195, 54266, 54337, 54408, 54479, 54550, 54621, 54692, 54763, 54834, 54905, 54976,
+        55047, 55117, 55188, 55259, 55330, 55400, 55471, 55542, 55612, 55683, 55754, 55824,
+        55895, 55966, 56036, 56106, 56177, 56247, 56318, 56388, 56459, 56529, 56599, 56670,
+        56740, 56810, 56880, 56950, 57020, 57091, 57161, 57231, 57301, 57371, 57441, 57511,
+        57581, 57651, 57721, 57791, 57861, 57931, 58000, 58070, 58140, 58210, 58280, 58349,
+        58419, 58489, 58558, 58628, 58698, 58767, 58836, 58906, 58976, 59045, 59115, 59184,
+        59253, 59323, 59392, 59461, 59531, 59600, 59669, 59739, 59808, 59877, 59946, 60015,
+        60084, 60153, 60222, 60291, 60360, 60429, 60499, 60567, 60636, 60705, 60774, 60843,
+        60912, 60980, 61049, 61118, 61187, 61255, 61324, 61393, 61461, 61530, 61599, 61667,
+        61736, 61804, 61873, 61941, 62010, 62078, 62146, 62215, 62283, 62352, 62420, 62488,
+        62556, 62624, 62693, 62761, 62829, 62897, 62965, 63033, 63101, 63169, 63237, 63305,
+        63373, 63441, 63509, 63577, 63645, 63713, 63780, 63848, 63916, 63984, 64051, 64119,
+        64187, 64254, 64322, 64390, 64457, 64525, 64592, 64660, 64727, 64795, 64862, 64930,
+        64997, 65064, 65132, 65199, 65266, 65333, 65401, 65468, 65535,
+      };
+      // Stock returns +/-666.66 outside these limits; map faults to NaN.
+      if (!std::isfinite(coordinate) || coordinate < 3869.0f || coordinate > 65635.0f)
+        return NAN;
+      if (coordinate > 65535.0f) return 600.0f;
+      unsigned index = 0;
+      while (index < 799 && coordinate > pgm_read_word(&table[index + 1])) ++index;
+      const float low = pgm_read_word(&table[index]);
+      const float width = pgm_read_word(&table[index + 1]) - low;
+      return (coordinate - low) / width + static_cast<float>(index) - 200.0f;
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address"
+      entity_category: diagnostic
+
+  - platform: debug
+    reset_reason:
+      name: "Last Reset Reason"
+      entity_category: diagnostic
+
+binary_sensor:
+  - platform: template
+    name: "Measurement Problem"
+    device_class: problem
+    entity_category: diagnostic
+    # Allow initial sampling after boot. Missing readings, ADC faults and
+    # recovered table-range faults propagate NaN through the calculation.
+    # This does not verify calibration or distinguish probe wiring faults.
+    lambda: |-
+      if (!id(pt1000_temp).has_state() && millis() < 30000U) {
+        return {};
+      }
+      return !id(pt1000_temp).has_state() ||
+             !std::isfinite(id(pt1000_temp).state);
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: config
+
+# Match the factory's six-conversion burst using native ESPHome actions.
+# The filter publishes one six-sample average per burst.
+# Each 64 SPS conversion waits about 17 ms plus I2C overhead; a burst takes
+# roughly 0.1-0.15 seconds. ESPHome may log a long-operation warning for this.
+interval:
+  - interval: 1s
+    then:
+      - repeat:
+          count: 6
+          then:
+            - component.update: pt1000_raw

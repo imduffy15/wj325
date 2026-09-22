@@ -1,0 +1,44 @@
+{
+  "reference": "Stock WJ325, same probe per paired comparison; no independent absolute reference",
+  "method": "Fit factory zero/full count parameters; retain ADC settings, Vref, Rzero and nonlinear RTD conversion",
+  "original_zero": 1,
+  "original_full": 28990,
+  "fitted_zero": 13,
+  "fitted_full": 28767,
+  "continuous_seed": {
+    "zero": 12.13171617260923,
+    "full": 28768.878837480668
+  },
+  "fit_sum_squared_error": 3.143843241132818e-08,
+  "points": [
+    {
+      "location": "bottom",
+      "source_esphome": "esphome-bottom-baseline.json",
+      "source_stock": "stock-bottom-baseline.json",
+      "esphome_samples": 180,
+      "stock_samples": 20,
+      "stock_target_C": 20.085713193,
+      "previous_esphome_C": 17.673006666666666,
+      "target_normalized_count": 15014.654841070715,
+      "mean_reference_count": 13189.18888888889,
+      "predicted_calibrated_C": 20.085684034559463,
+      "fit_residual_C": -2.915844053674732e-05,
+      "mean_voltage_V": 1.3685999833333333
+    },
+    {
+      "location": "top",
+      "source_esphome": "esphome-burst-sampling-baseline.json",
+      "source_stock": "stock-after-burst-baseline.json",
+      "esphome_samples": 60,
+      "stock_samples": 21,
+      "stock_target_C": 61.44757952,
+      "previous_esphome_C": 58.5285915,
+      "target_normalized_count": 16804.14254381279,
+      "mean_reference_count": 14759.666666666666,
+      "predicted_calibrated_C": 61.4477544148763,
+      "fit_residual_C": 0.0001748948763022895,
+      "mean_voltage_V": 1.5315568166666667
+    }
+  ],
+  "limits": "Sequential observations, two different probes across locations. Provisional near 20\u201361 C; not validated outside that range. Fit residual is not an accuracy claim."
+}

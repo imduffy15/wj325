@@ -1,0 +1,136 @@
+esphome:
+  name: hot-water-tank-top
+  friendly_name: Hot Water Tank Top
+esp8266:
+  board: esp_wroom_02
+  
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  reboot_timeout: 12h
+  ap: {}
+
+captive_portal:
+
+web_server:
+
+api:
+  # Keep measuring and serving the web UI when Home Assistant is offline.
+  reboot_timeout: 0s
+
+ota:
+  platform: esphome
+
+logger:
+
+debug:
+  update_interval: 60s
+
+improv_serial:
+
+i2c:
+  sda: GPIO12
+  scl: GPIO14
+  scan: true
+
+ads1115:
+  - id: ads1115_1
+    address: 0x48
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: debug
+    free:
+      name: "Free Heap"
+      entity_category: diagnostic
+
+  - platform: ads1115
+    multiplexer: 'A0_GND'
+    gain: 4.096
+    ads1115_id: ads1115_1
+    name: "PT1000 Raw"
+    id: pt1000_raw
+    entity_category: diagnostic
+    device_class: voltage
+    state_class: measurement
+    accuracy_decimals: 4
+    update_interval: 1s
+    filters:
+      # Publish a ten-sample average every ten seconds.
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 10
+          send_first_at: 10
+      # Mark stopped ADC updates unavailable instead of retaining old data.
+      - timeout: 30s
+    on_value:
+      - component.update: pt1000_voltage
+          
+  - platform: template
+    name: "PT1000 Voltage"
+    id: pt1000_voltage
+    entity_category: diagnostic
+    device_class: voltage
+    state_class: measurement
+    unit_of_measurement: "V"
+    accuracy_decimals: 6
+    update_interval: never
+    lambda: |-
+      return id(pt1000_raw).state;
+    on_value:
+      - component.update: pt1000_temp
+
+  - platform: template
+    name: "PT1000 Temperature"
+    id: pt1000_temp
+    device_class: temperature
+    state_class: measurement
+    unit_of_measurement: "°C"
+    accuracy_decimals: 2
+    update_interval: never
+    # Existing calibration and conversion are preserved pending verification.
+    lambda: |-
+      auto voltage = id(pt1000_voltage).state;
+      float op_amp_factor = 1.365f / 1078.19f;
+      float resistance = voltage / op_amp_factor;
+      return (resistance - 1000.0f) / 3.85f;
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address"
+      entity_category: diagnostic
+
+  - platform: debug
+    reset_reason:
+      name: "Last Reset Reason"
+      entity_category: diagnostic
+
+binary_sensor:
+  - platform: template
+    name: "Measurement Problem"
+    device_class: problem
+    entity_category: diagnostic
+    # Allow the first ten-sample average to arrive after boot. The ADC's
+    # timeout filter propagates NaN through the unchanged calculation chain.
+    # This checks data availability, not calibration or probe wiring.
+    lambda: |-
+      if (!id(pt1000_temp).has_state() && millis() < 30000U) {
+        return {};
+      }
+      return !id(pt1000_temp).has_state() ||
+             !std::isfinite(id(pt1000_temp).state);
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: config

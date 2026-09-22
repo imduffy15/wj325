@@ -1,0 +1,1087 @@
+[
+  {
+    "time": "2026-09-22T20:33:52Z",
+    "elapsed": 0.186,
+    "temperature": 17.75365
+  },
+  {
+    "time": "2026-09-22T20:33:53Z",
+    "elapsed": 0.732,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:33:54Z",
+    "elapsed": 1.722,
+    "temperature": 17.61946,
+    "voltage": 1.368406
+  },
+  {
+    "time": "2026-09-22T20:33:55Z",
+    "elapsed": 2.706,
+    "temperature": 17.66418,
+    "voltage": 1.368625
+  },
+  {
+    "time": "2026-09-22T20:33:56Z",
+    "elapsed": 3.705,
+    "temperature": 17.61946,
+    "voltage": 1.368406
+  },
+  {
+    "time": "2026-09-22T20:33:57Z",
+    "elapsed": 4.706,
+    "temperature": 17.59708,
+    "voltage": 1.368219
+  },
+  {
+    "time": "2026-09-22T20:33:58Z",
+    "elapsed": 5.711,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:33:59Z",
+    "elapsed": 6.705,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:34:00Z",
+    "elapsed": 7.709,
+    "temperature": 17.75365,
+    "voltage": 1.368844
+  },
+  {
+    "time": "2026-09-22T20:34:01Z",
+    "elapsed": 8.709,
+    "temperature": 17.70891,
+    "voltage": 1.368813
+  },
+  {
+    "time": "2026-09-22T20:34:02Z",
+    "elapsed": 9.708,
+    "temperature": 17.7984,
+    "voltage": 1.369094
+  },
+  {
+    "time": "2026-09-22T20:34:03Z",
+    "elapsed": 10.707,
+    "temperature": 17.75365,
+    "voltage": 1.368844
+  },
+  {
+    "time": "2026-09-22T20:34:04Z",
+    "elapsed": 11.707,
+    "temperature": 17.82074,
+    "voltage": 1.36925
+  },
+  {
+    "time": "2026-09-22T20:34:05Z",
+    "elapsed": 12.732,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:34:06Z",
+    "elapsed": 13.732,
+    "temperature": 17.7984,
+    "voltage": 1.369062
+  },
+  {
+    "time": "2026-09-22T20:34:07Z",
+    "elapsed": 14.76,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:34:08Z",
+    "elapsed": 15.711,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:34:09Z",
+    "elapsed": 16.709,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:34:10Z",
+    "elapsed": 17.712,
+    "temperature": 17.59708,
+    "voltage": 1.36825
+  },
+  {
+    "time": "2026-09-22T20:34:11Z",
+    "elapsed": 18.715,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:34:12Z",
+    "elapsed": 19.715,
+    "temperature": 17.57471,
+    "voltage": 1.368188
+  },
+  {
+    "time": "2026-09-22T20:34:13Z",
+    "elapsed": 20.717,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:34:14Z",
+    "elapsed": 21.716,
+    "temperature": 17.70891,
+    "voltage": 1.36875
+  },
+  {
+    "time": "2026-09-22T20:34:15Z",
+    "elapsed": 22.717,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:34:16Z",
+    "elapsed": 23.72,
+    "temperature": 17.70891,
+    "voltage": 1.368812
+  },
+  {
+    "time": "2026-09-22T20:34:17Z",
+    "elapsed": 24.719,
+    "temperature": 17.50761,
+    "voltage": 1.367938
+  },
+  {
+    "time": "2026-09-22T20:34:18Z",
+    "elapsed": 25.712,
+    "temperature": 17.55237,
+    "voltage": 1.368062
+  },
+  {
+    "time": "2026-09-22T20:34:19Z",
+    "elapsed": 26.721,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:34:20Z",
+    "elapsed": 27.741,
+    "temperature": 17.61946,
+    "voltage": 1.368344
+  },
+  {
+    "time": "2026-09-22T20:34:21Z",
+    "elapsed": 28.723,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  },
+  {
+    "time": "2026-09-22T20:34:22Z",
+    "elapsed": 29.725,
+    "temperature": 17.50761,
+    "voltage": 1.367969
+  },
+  {
+    "time": "2026-09-22T20:34:23Z",
+    "elapsed": 30.71,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:34:24Z",
+    "elapsed": 31.725,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:34:25Z",
+    "elapsed": 32.708,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:34:26Z",
+    "elapsed": 33.7,
+    "temperature": 17.50761,
+    "voltage": 1.367937
+  },
+  {
+    "time": "2026-09-22T20:34:27Z",
+    "elapsed": 34.716,
+    "temperature": 17.61946,
+    "voltage": 1.368406
+  },
+  {
+    "time": "2026-09-22T20:34:28Z",
+    "elapsed": 35.739,
+    "temperature": 17.75365,
+    "voltage": 1.368937
+  },
+  {
+    "time": "2026-09-22T20:34:29Z",
+    "elapsed": 36.708,
+    "temperature": 17.68654,
+    "voltage": 1.368719
+  },
+  {
+    "time": "2026-09-22T20:34:30Z",
+    "elapsed": 37.71,
+    "temperature": 17.77605,
+    "voltage": 1.369031
+  },
+  {
+    "time": "2026-09-22T20:34:31Z",
+    "elapsed": 38.708,
+    "temperature": 17.68654,
+    "voltage": 1.368719
+  },
+  {
+    "time": "2026-09-22T20:34:32Z",
+    "elapsed": 39.766,
+    "temperature": 17.75365,
+    "voltage": 1.368844
+  },
+  {
+    "time": "2026-09-22T20:34:33Z",
+    "elapsed": 40.709,
+    "temperature": 17.66418,
+    "voltage": 1.368563
+  },
+  {
+    "time": "2026-09-22T20:34:34Z",
+    "elapsed": 41.708,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:34:35Z",
+    "elapsed": 42.712,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:34:36Z",
+    "elapsed": 43.708,
+    "temperature": 17.82074,
+    "voltage": 1.36925
+  },
+  {
+    "time": "2026-09-22T20:34:37Z",
+    "elapsed": 44.714,
+    "temperature": 17.59708,
+    "voltage": 1.368219
+  },
+  {
+    "time": "2026-09-22T20:34:38Z",
+    "elapsed": 45.708,
+    "temperature": 17.75365,
+    "voltage": 1.368938
+  },
+  {
+    "time": "2026-09-22T20:34:39Z",
+    "elapsed": 46.714,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:34:40Z",
+    "elapsed": 47.712,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:34:41Z",
+    "elapsed": 48.719,
+    "temperature": 17.77605,
+    "voltage": 1.369
+  },
+  {
+    "time": "2026-09-22T20:34:42Z",
+    "elapsed": 49.71,
+    "temperature": 17.7984,
+    "voltage": 1.369094
+  },
+  {
+    "time": "2026-09-22T20:34:43Z",
+    "elapsed": 50.711,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:34:44Z",
+    "elapsed": 51.71,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:34:45Z",
+    "elapsed": 52.709,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:34:46Z",
+    "elapsed": 53.708,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  },
+  {
+    "time": "2026-09-22T20:34:47Z",
+    "elapsed": 54.709,
+    "temperature": 17.50761,
+    "voltage": 1.367937
+  },
+  {
+    "time": "2026-09-22T20:34:48Z",
+    "elapsed": 55.729,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:34:49Z",
+    "elapsed": 56.714,
+    "temperature": 17.48526,
+    "voltage": 1.367875
+  },
+  {
+    "time": "2026-09-22T20:34:50Z",
+    "elapsed": 57.726,
+    "temperature": 17.6418,
+    "voltage": 1.3685
+  },
+  {
+    "time": "2026-09-22T20:34:51Z",
+    "elapsed": 58.71,
+    "temperature": 17.70891,
+    "voltage": 1.36875
+  },
+  {
+    "time": "2026-09-22T20:34:52Z",
+    "elapsed": 59.71,
+    "temperature": 17.66418,
+    "voltage": 1.368625
+  },
+  {
+    "time": "2026-09-22T20:34:53Z",
+    "elapsed": 60.721,
+    "temperature": 17.66418,
+    "voltage": 1.368563
+  },
+  {
+    "time": "2026-09-22T20:34:54Z",
+    "elapsed": 61.744,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:34:55Z",
+    "elapsed": 62.709,
+    "temperature": 17.66418,
+    "voltage": 1.368562
+  },
+  {
+    "time": "2026-09-22T20:34:56Z",
+    "elapsed": 63.709,
+    "temperature": 17.50761,
+    "voltage": 1.368
+  },
+  {
+    "time": "2026-09-22T20:34:57Z",
+    "elapsed": 64.712,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:34:58Z",
+    "elapsed": 65.715,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:34:59Z",
+    "elapsed": 66.71,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:35:00Z",
+    "elapsed": 67.711,
+    "temperature": 17.57471,
+    "voltage": 1.368156
+  },
+  {
+    "time": "2026-09-22T20:35:01Z",
+    "elapsed": 68.713,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:35:02Z",
+    "elapsed": 69.712,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:35:03Z",
+    "elapsed": 70.735,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:35:04Z",
+    "elapsed": 71.732,
+    "temperature": 17.70891,
+    "voltage": 1.36875
+  },
+  {
+    "time": "2026-09-22T20:35:05Z",
+    "elapsed": 72.726,
+    "temperature": 17.66418,
+    "voltage": 1.368625
+  },
+  {
+    "time": "2026-09-22T20:35:06Z",
+    "elapsed": 73.712,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:35:07Z",
+    "elapsed": 74.717,
+    "temperature": 17.75365,
+    "voltage": 1.368875
+  },
+  {
+    "time": "2026-09-22T20:35:08Z",
+    "elapsed": 75.713,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:35:09Z",
+    "elapsed": 76.714,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:35:10Z",
+    "elapsed": 77.71,
+    "temperature": 17.77605,
+    "voltage": 1.369
+  },
+  {
+    "time": "2026-09-22T20:35:11Z",
+    "elapsed": 78.719,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:35:12Z",
+    "elapsed": 79.714,
+    "temperature": 17.70891,
+    "voltage": 1.368813
+  },
+  {
+    "time": "2026-09-22T20:35:13Z",
+    "elapsed": 80.711,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:35:14Z",
+    "elapsed": 81.71,
+    "temperature": 17.75365,
+    "voltage": 1.368844
+  },
+  {
+    "time": "2026-09-22T20:35:15Z",
+    "elapsed": 82.715,
+    "temperature": 17.77605,
+    "voltage": 1.369
+  },
+  {
+    "time": "2026-09-22T20:35:16Z",
+    "elapsed": 83.712,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:35:17Z",
+    "elapsed": 84.713,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:35:18Z",
+    "elapsed": 85.71,
+    "temperature": 17.59708,
+    "voltage": 1.368219
+  },
+  {
+    "time": "2026-09-22T20:35:19Z",
+    "elapsed": 86.713,
+    "temperature": 17.75365,
+    "voltage": 1.368937
+  },
+  {
+    "time": "2026-09-22T20:35:20Z",
+    "elapsed": 87.711,
+    "temperature": 17.7984,
+    "voltage": 1.369062
+  },
+  {
+    "time": "2026-09-22T20:35:21Z",
+    "elapsed": 88.713,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:35:22Z",
+    "elapsed": 89.712,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:35:23Z",
+    "elapsed": 90.714,
+    "temperature": 17.75365,
+    "voltage": 1.368937
+  },
+  {
+    "time": "2026-09-22T20:35:24Z",
+    "elapsed": 91.729,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:35:25Z",
+    "elapsed": 92.714,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:35:26Z",
+    "elapsed": 93.714,
+    "temperature": 17.75365,
+    "voltage": 1.368875
+  },
+  {
+    "time": "2026-09-22T20:35:27Z",
+    "elapsed": 94.713,
+    "temperature": 17.68654,
+    "voltage": 1.368719
+  },
+  {
+    "time": "2026-09-22T20:35:28Z",
+    "elapsed": 95.72,
+    "temperature": 17.77605,
+    "voltage": 1.369
+  },
+  {
+    "time": "2026-09-22T20:35:29Z",
+    "elapsed": 96.713,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:35:30Z",
+    "elapsed": 97.712,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:35:31Z",
+    "elapsed": 98.713,
+    "temperature": 17.75365,
+    "voltage": 1.368875
+  },
+  {
+    "time": "2026-09-22T20:35:32Z",
+    "elapsed": 99.714,
+    "temperature": 17.70891,
+    "voltage": 1.368813
+  },
+  {
+    "time": "2026-09-22T20:35:33Z",
+    "elapsed": 100.716,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:35:34Z",
+    "elapsed": 101.713,
+    "temperature": 17.66418,
+    "voltage": 1.368563
+  },
+  {
+    "time": "2026-09-22T20:35:35Z",
+    "elapsed": 102.712,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:35:36Z",
+    "elapsed": 103.713,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:35:37Z",
+    "elapsed": 104.712,
+    "temperature": 17.61946,
+    "voltage": 1.368344
+  },
+  {
+    "time": "2026-09-22T20:35:38Z",
+    "elapsed": 105.712,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:35:39Z",
+    "elapsed": 106.715,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:35:40Z",
+    "elapsed": 107.736,
+    "temperature": 17.61946,
+    "voltage": 1.368344
+  },
+  {
+    "time": "2026-09-22T20:35:41Z",
+    "elapsed": 108.71,
+    "temperature": 17.6418,
+    "voltage": 1.368437
+  },
+  {
+    "time": "2026-09-22T20:35:42Z",
+    "elapsed": 109.709,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:35:43Z",
+    "elapsed": 110.71,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:35:44Z",
+    "elapsed": 111.717,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:35:45Z",
+    "elapsed": 112.719,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  },
+  {
+    "time": "2026-09-22T20:35:46Z",
+    "elapsed": 113.713,
+    "temperature": 17.6418,
+    "voltage": 1.368437
+  },
+  {
+    "time": "2026-09-22T20:35:47Z",
+    "elapsed": 114.712,
+    "temperature": 17.61946,
+    "voltage": 1.368344
+  },
+  {
+    "time": "2026-09-22T20:35:48Z",
+    "elapsed": 115.709,
+    "temperature": 17.66418,
+    "voltage": 1.368563
+  },
+  {
+    "time": "2026-09-22T20:35:49Z",
+    "elapsed": 116.726,
+    "temperature": 17.61946,
+    "voltage": 1.368406
+  },
+  {
+    "time": "2026-09-22T20:35:50Z",
+    "elapsed": 117.713,
+    "temperature": 17.6418,
+    "voltage": 1.3685
+  },
+  {
+    "time": "2026-09-22T20:35:51Z",
+    "elapsed": 118.718,
+    "temperature": 17.55237,
+    "voltage": 1.368031
+  },
+  {
+    "time": "2026-09-22T20:35:52Z",
+    "elapsed": 119.713,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:35:53Z",
+    "elapsed": 120.738,
+    "temperature": 17.7984,
+    "voltage": 1.369062
+  },
+  {
+    "time": "2026-09-22T20:35:54Z",
+    "elapsed": 121.711,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:35:55Z",
+    "elapsed": 122.712,
+    "temperature": 17.82074,
+    "voltage": 1.36925
+  },
+  {
+    "time": "2026-09-22T20:35:56Z",
+    "elapsed": 123.713,
+    "temperature": 17.77605,
+    "voltage": 1.369
+  },
+  {
+    "time": "2026-09-22T20:35:57Z",
+    "elapsed": 124.712,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:35:58Z",
+    "elapsed": 125.753,
+    "temperature": 17.7984,
+    "voltage": 1.369094
+  },
+  {
+    "time": "2026-09-22T20:35:59Z",
+    "elapsed": 126.714,
+    "temperature": 17.77605,
+    "voltage": 1.369031
+  },
+  {
+    "time": "2026-09-22T20:36:00Z",
+    "elapsed": 127.715,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  },
+  {
+    "time": "2026-09-22T20:36:01Z",
+    "elapsed": 128.717,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:36:02Z",
+    "elapsed": 129.746,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:36:03Z",
+    "elapsed": 130.718,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:36:04Z",
+    "elapsed": 131.72,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:36:05Z",
+    "elapsed": 132.709,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:36:06Z",
+    "elapsed": 133.72,
+    "temperature": 17.57471,
+    "voltage": 1.368187
+  },
+  {
+    "time": "2026-09-22T20:36:07Z",
+    "elapsed": 134.749,
+    "temperature": 17.77605,
+    "voltage": 1.368969
+  },
+  {
+    "time": "2026-09-22T20:36:08Z",
+    "elapsed": 135.723,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:36:09Z",
+    "elapsed": 136.723,
+    "temperature": 17.59708,
+    "voltage": 1.36825
+  },
+  {
+    "time": "2026-09-22T20:36:10Z",
+    "elapsed": 137.74,
+    "temperature": 17.66418,
+    "voltage": 1.368625
+  },
+  {
+    "time": "2026-09-22T20:36:11Z",
+    "elapsed": 138.707,
+    "temperature": 17.59708,
+    "voltage": 1.36825
+  },
+  {
+    "time": "2026-09-22T20:36:12Z",
+    "elapsed": 139.728,
+    "temperature": 17.50761,
+    "voltage": 1.368
+  },
+  {
+    "time": "2026-09-22T20:36:13Z",
+    "elapsed": 140.728,
+    "temperature": 17.48526,
+    "voltage": 1.367875
+  },
+  {
+    "time": "2026-09-22T20:36:14Z",
+    "elapsed": 141.713,
+    "temperature": 17.59708,
+    "voltage": 1.368281
+  },
+  {
+    "time": "2026-09-22T20:36:15Z",
+    "elapsed": 142.73,
+    "temperature": 17.55237,
+    "voltage": 1.368062
+  },
+  {
+    "time": "2026-09-22T20:36:16Z",
+    "elapsed": 143.71,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:36:17Z",
+    "elapsed": 144.73,
+    "temperature": 17.55237,
+    "voltage": 1.368062
+  },
+  {
+    "time": "2026-09-22T20:36:18Z",
+    "elapsed": 145.711,
+    "temperature": 17.55237,
+    "voltage": 1.368062
+  },
+  {
+    "time": "2026-09-22T20:36:19Z",
+    "elapsed": 146.733,
+    "temperature": 17.46289,
+    "voltage": 1.367781
+  },
+  {
+    "time": "2026-09-22T20:36:20Z",
+    "elapsed": 147.713,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:36:21Z",
+    "elapsed": 148.717,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:36:22Z",
+    "elapsed": 149.721,
+    "temperature": 17.59708,
+    "voltage": 1.36825
+  },
+  {
+    "time": "2026-09-22T20:36:23Z",
+    "elapsed": 150.714,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:36:24Z",
+    "elapsed": 151.713,
+    "temperature": 17.57471,
+    "voltage": 1.368188
+  },
+  {
+    "time": "2026-09-22T20:36:25Z",
+    "elapsed": 152.716,
+    "temperature": 17.50761,
+    "voltage": 1.367938
+  },
+  {
+    "time": "2026-09-22T20:36:26Z",
+    "elapsed": 153.734,
+    "temperature": 17.59708,
+    "voltage": 1.368281
+  },
+  {
+    "time": "2026-09-22T20:36:27Z",
+    "elapsed": 154.715,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:36:28Z",
+    "elapsed": 155.715,
+    "temperature": 17.66418,
+    "voltage": 1.368562
+  },
+  {
+    "time": "2026-09-22T20:36:29Z",
+    "elapsed": 156.713,
+    "temperature": 17.6418,
+    "voltage": 1.368437
+  },
+  {
+    "time": "2026-09-22T20:36:30Z",
+    "elapsed": 157.717,
+    "temperature": 17.6418,
+    "voltage": 1.368469
+  },
+  {
+    "time": "2026-09-22T20:36:31Z",
+    "elapsed": 158.766,
+    "temperature": 17.6418,
+    "voltage": 1.3685
+  },
+  {
+    "time": "2026-09-22T20:36:32Z",
+    "elapsed": 159.723,
+    "temperature": 17.55237,
+    "voltage": 1.368094
+  },
+  {
+    "time": "2026-09-22T20:36:33Z",
+    "elapsed": 160.717,
+    "temperature": 17.59708,
+    "voltage": 1.368281
+  },
+  {
+    "time": "2026-09-22T20:36:34Z",
+    "elapsed": 161.714,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  },
+  {
+    "time": "2026-09-22T20:36:35Z",
+    "elapsed": 162.714,
+    "temperature": 17.68654,
+    "voltage": 1.368656
+  },
+  {
+    "time": "2026-09-22T20:36:36Z",
+    "elapsed": 163.766,
+    "temperature": 17.59708,
+    "voltage": 1.368312
+  },
+  {
+    "time": "2026-09-22T20:36:37Z",
+    "elapsed": 164.711,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:36:38Z",
+    "elapsed": 165.711,
+    "temperature": 17.61946,
+    "voltage": 1.368375
+  },
+  {
+    "time": "2026-09-22T20:36:39Z",
+    "elapsed": 166.714,
+    "temperature": 17.70891,
+    "voltage": 1.368813
+  },
+  {
+    "time": "2026-09-22T20:36:40Z",
+    "elapsed": 167.788,
+    "temperature": 17.6418,
+    "voltage": 1.3685
+  },
+  {
+    "time": "2026-09-22T20:36:41Z",
+    "elapsed": 168.715,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:36:42Z",
+    "elapsed": 169.716,
+    "temperature": 17.70891,
+    "voltage": 1.36875
+  },
+  {
+    "time": "2026-09-22T20:36:43Z",
+    "elapsed": 170.724,
+    "temperature": 17.61946,
+    "voltage": 1.368344
+  },
+  {
+    "time": "2026-09-22T20:36:44Z",
+    "elapsed": 171.713,
+    "temperature": 17.82074,
+    "voltage": 1.369156
+  },
+  {
+    "time": "2026-09-22T20:36:45Z",
+    "elapsed": 172.721,
+    "temperature": 17.82074,
+    "voltage": 1.369187
+  },
+  {
+    "time": "2026-09-22T20:36:46Z",
+    "elapsed": 173.719,
+    "temperature": 17.68654,
+    "voltage": 1.368688
+  },
+  {
+    "time": "2026-09-22T20:36:47Z",
+    "elapsed": 174.722,
+    "temperature": 17.75365,
+    "voltage": 1.368906
+  },
+  {
+    "time": "2026-09-22T20:36:48Z",
+    "elapsed": 175.713,
+    "temperature": 17.7984,
+    "voltage": 1.369125
+  },
+  {
+    "time": "2026-09-22T20:36:49Z",
+    "elapsed": 176.735,
+    "temperature": 17.66418,
+    "voltage": 1.368594
+  },
+  {
+    "time": "2026-09-22T20:36:50Z",
+    "elapsed": 177.713,
+    "temperature": 17.70891,
+    "voltage": 1.36875
+  },
+  {
+    "time": "2026-09-22T20:36:51Z",
+    "elapsed": 178.713,
+    "temperature": 17.70891,
+    "voltage": 1.368781
+  },
+  {
+    "time": "2026-09-22T20:36:52Z",
+    "elapsed": 179.713,
+    "temperature": 17.66418,
+    "voltage": 1.368531
+  }
+]

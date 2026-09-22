@@ -1,0 +1,9 @@
+{"time": "2026-09-22T20:57:51.901210+00:00", "peer": "192.168.20.235", "path": "/wayjunUpdate/WJ325.bin", "headers": {}}
+192.168.20.235 - - [22/Sep/2026 20:57:51] "GET /wayjunUpdate/WJ325.bin HTTP/1.1" 200 -
+SENT 425616 bytes to 192.168.20.235
+{"time": "2026-09-22T20:57:52.279886+00:00", "peer": "192.168.20.254", "path": "/wayjunUpdate/WJ325.bin", "headers": {"x-esp8266-chip-id": "8532332", "x-esp8266-sta-mac": "D8:BC:38:82:31:6C", "x-esp8266-ap-mac": "DA:BC:38:82:31:6C", "x-esp8266-free-space": "524288", "x-esp8266-sketch-size": "435552", "x-esp8266-sketch-md5": "a7b57f2e3d1a22ac68f384acecc56aa7", "x-esp8266-chip-size": "2097152", "x-esp8266-sdk-version": "2.2.2-dev(38a443e)", "x-esp8266-mode": "sketch"}}
+192.168.20.254 - - [22/Sep/2026 20:57:52] code 404, message Not Found
+192.168.20.254 - - [22/Sep/2026 20:57:52] "GET /wayjunUpdate/WJ325.bin HTTP/1.0" 404 -
+{"time": "2026-09-22T20:58:19.115505+00:00", "peer": "192.168.20.254", "path": "/wayjunUpdate/WJ325.bin", "headers": {"x-esp8266-chip-id": "8532332", "x-esp8266-sta-mac": "D8:BC:38:82:31:6C", "x-esp8266-ap-mac": "DA:BC:38:82:31:6C", "x-esp8266-free-space": "524288", "x-esp8266-sketch-size": "435552", "x-esp8266-sketch-md5": "a7b57f2e3d1a22ac68f384acecc56aa7", "x-esp8266-chip-size": "2097152", "x-esp8266-sdk-version": "2.2.2-dev(38a443e)", "x-esp8266-mode": "sketch"}}
+192.168.20.254 - - [22/Sep/2026 20:58:19] "GET /wayjunUpdate/WJ325.bin HTTP/1.0" 200 -
+SENT 425616 bytes to 192.168.20.254

@@ -1,0 +1,8 @@
+{
+  "adc_sequences": 693,
+  "fault_sequences": 331,
+  "max_temperature_difference_C": 0.0,
+  "max_native_driver_scaling_difference_C": 0.0,
+  "unique_instructions_executed": 481,
+  "decoded_instructions": 481
+}

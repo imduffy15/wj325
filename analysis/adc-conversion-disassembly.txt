@@ -1,0 +1,685 @@
+0x40201c90      12c1f0         addi a1, a1, -16
+0x40201c93      c921           s32i.n a12, a1, 8
+0x40201c95      c1faff         l32r a12, 0x40201c80                    ; [0x40201c80:4]=0x3fff2014
+0x40201c98      0cc3           movi.n a3, 12
+0x40201c9a      2d0c           mov.n a2, a12
+0x40201c9c      0ce4           movi.n a4, 14
+0x40201c9e      0931           s32i.n a0, a1, 12
+0x40201ca0      455e12         call0 0x40214288
+0x40201ca3      21f8ff         l32r a2, 0x40201c84                     ; [0x40201c84:4]=0x3fff19dc
+0x40201ca6      4c83           movi.n a3, 72
+0x40201ca8      4d0c           mov.n a4, a12
+0x40201caa      450612         call0 0x40213d10
+0x40201cad      3102fd         l32r a3, 0x402010b8                     ; [0x402010b8:4]=0x3fff2170
+0x40201cb0      cc62           bnez.n a2, 0x40201cba
+0x40201cb2      2d03           mov.n a2, a3
+0x40201cb4      31f5ff         l32r a3, 0x40201c88                     ; [0x40201c88:4]=0x3ffe8748
+0x40201cb7      460100         j 0x40201cc0
+0x40201cba      302320         or a2, a3, a3
+0x40201cbd      31f3ff         l32r a3, 0x40201c8c                     ; [0x40201c8c:4]=0x3ffe8762
+0x40201cc0      c56b15         call0 0x40217380
+0x40201cc3      022103         l32i a0, a1, 12
+0x40201cc6      c22102         l32i a12, a1, 8
+0x40201cc9      12c110         addi a1, a1, 16
+0x40201ccc      0df0           ret.n
+0x40201cce      000080         add a0, a0, a0
+0x40201cd1      c10040         l32r a12, 0x401d1cd4                    ; [0x401d1cd4:4]=-1
+0x40201cd4      88dc           l32i.n a8, a12, 52
+0x40201cd6      0040ac         excw
+0x40201cd9      e20040         l8ui a14, a0, 64
+0x40201cdc      406210         and a6, a2, a4
+0x40201cdf      4012c1         mul16u a1, a2, a4
+0x40201ce2      d0c9a1         excw
+0x40201ce5      0c0c           movi.n a12, 0
+0x40201ce7      d991           s32i.n a13, a1, 36
+0x40201ce9      e981           s32i.n a14, a1, 32
+0x40201ceb      f971           s32i.n a15, a1, 28
+0x40201ced      09b1           s32i.n a0, a1, 44
+0x40201cef      ed03           mov.n a14, a3
+0x40201cf1      4901           s32i.n a4, a1, 0
+0x40201cf3      5911           s32i.n a5, a1, 4
+0x40201cf5      d100fd         l32r a13, 0x402010f8                    ; [0x402010f8:4]=0
+0x40201cf8      fd0c           mov.n a15, a12
+0x40201cfa      208074         extui a8, a2, 0, 8
+0x40201cfd      c60a00         j 0x40201d2c
+0x40201d00      21e1ff         l32r a2, 0x40201c84                     ; [0x40201c84:4]=0x3fff19dc
+0x40201d03      803820         or a3, a8, a8
+0x40201d06      826103         s32i a8, a1, 12
+0x40201d09      452212         call0 0x40213f30
+0x40201d0c      7d02           mov.n a7, a2
+0x40201d0e      21ddff         l32r a2, 0x40201c84                     ; [0x40201c84:4]=0x3fff19dc
+0x40201d11      3d07           mov.n a3, a7
+0x40201d13      7921           s32i.n a7, a1, 8
+0x40201d15      050512         call0 0x40213d68
+0x40201d18      7821           l32i.n a7, a1, 8
+0x40201d1a      3d02           mov.n a3, a2
+0x40201d1c      2d0d           mov.n a2, a13
+0x40201d1e      7aff           add.n a15, a15, a7
+0x40201d20      01ecff         l32r a0, 0x40201cd0                     ; [0x40201cd0:4]=0x4000c180
+0x40201d23      c00000         callx0 a0
+0x40201d26      8831           l32i.n a8, a1, 12
+0x40201d28      dd02           mov.n a13, a2
+0x40201d2a      1bcc           addi.n a12, a12, 1
+0x40201d2c      e72cd0         blt a12, a14, 0x40201d00
+0x40201d2f      3d0e           mov.n a3, a14
+0x40201d31      2d0f           mov.n a2, a15
+0x40201d33      01e8ff         l32r a0, 0x40201cd4                     ; [0x40201cd4:4]=0x4000dc88
+0x40201d36      c00000         callx0 a0
+0x40201d39      3801           l32i.n a3, a1, 0
+0x40201d3b      225300         s16i a2, a3, 0
+0x40201d3e      2d0e           mov.n a2, a14
+0x40201d40      01e6ff         l32r a0, 0x40201cd8                     ; [0x40201cd8:4]=0x4000e2ac
+0x40201d43      c00000         callx0 a0
+0x40201d46      3d02           mov.n a3, a2
+0x40201d48      2d0d           mov.n a2, a13
+0x40201d4a      01e4ff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201d4d      c00000         callx0 a0
+0x40201d50      3811           l32i.n a3, a1, 4
+0x40201d52      08b1           l32i.n a0, a1, 44
+0x40201d54      c8a1           l32i.n a12, a1, 40
+0x40201d56      d891           l32i.n a13, a1, 36
+0x40201d58      e881           l32i.n a14, a1, 32
+0x40201d5a      f871           l32i.n a15, a1, 28
+0x40201d5c      2903           s32i.n a2, a3, 0
+0x40201d5e      12c130         addi a1, a1, 48
+0x40201d61      0df0           ret.n
+0x40201d63      00d819         excw
+0x40201d66      ff3fd419ff..   { extui a3, a15, 15, 14; excw }
+0x40201d6e      ff46246310..   { extui a4, a15, 6, 3; excw }
+0x40201d76      0040c4         extui a4, a0, 0, 13
+0x40201d79      c40040         excw
+0x40201d7c      12c1f0         addi a1, a1, -16
+0x40201d7f      c921           s32i.n a12, a1, 8
+0x40201d81      c1f9ff         l32r a12, 0x40201d68                    ; [0x40201d68:4]=0x3fff19d4
+0x40201d84      41f8ff         l32r a4, 0x40201d64                     ; [0x40201d64:4]=0x3fff19d8
+0x40201d87      0c02           movi.n a2, 0
+0x40201d89      0c63           movi.n a3, 6
+0x40201d8b      5d0c           mov.n a5, a12
+0x40201d8d      d911           s32i.n a13, a1, 4
+0x40201d8f      026103         s32i a0, a1, 12
+0x40201d92      c5f4ff         call0 0x40201ce0
+0x40201d95      210eff         l32r a2, 0x402019d0                     ; [0x402019d0:4]=0x3fff1490
+0x40201d98      22d205         addmi a2, a2, 0x500
+0x40201d9b      d22210         l32i a13, a2, 64
+0x40201d9e      280c           l32i.n a2, a12, 0
+0x40201da0      d03d20         or a3, a13, a13
+0x40201da3      01f3ff         l32r a0, 0x40201d70                     ; [0x40201d70:4]=0x40106324
+0x40201da6      c00000         callx0 a0
+0x40201da9      a61201         blti a2, 1, 0x40201dae
+0x40201dac      d90c           s32i.n a13, a12, 0
+0x40201dae      280c           l32i.n a2, a12, 0
+0x40201db0      3d0d           mov.n a3, a13
+0x40201db2      01caff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201db5      c00000         callx0 a0
+0x40201db8      31edff         l32r a3, 0x40201d6c                     ; [0x40201d6c:4]=0x46fffe00
+0x40201dbb      01eeff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40201dbe      c00000         callx0 a0
+0x40201dc1      01edff         l32r a0, 0x40201d78                     ; [0x40201d78:4]=0x4000c4c4
+0x40201dc4      c00000         callx0 a0
+0x40201dc7      0831           l32i.n a0, a1, 12
+0x40201dc9      2020f4         extui a2, a2, 0, 16
+0x40201dcc      c821           l32i.n a12, a1, 8
+0x40201dce      d811           l32i.n a13, a1, 4
+0x40201dd0      12c110         addi a1, a1, 16
+0x40201dd3      0df0           ret.n
+0x40201dd5      000000         ill
+0x40201dd8      3daa           excw
+0x40201dda      26c43d         beqi a4, 32, 0x40201e1b
+0x40201ddd      aa26           add.n a2, a6, a10
+0x40201ddf      440000         excw
+0x40201de2      164400         beqz a4, 0x40201dea
+0x40201de5      d07145         extui a7, a13, 17, 5
+0x40201de8      803180         add a3, a1, a8
+0x40201deb      4700ff         bnone a0, a4, 0x40201dee
+0x40201dee      7f475291fe..   { excw; excw }
+0x40201df6      4843           l32i.n a4, a3, 16
+0x40201df8      b06310         and a6, a3, a11
+0x40201dfb      40a4e2         remu a10, a4, a4
+0x40201dfe      004068         excw
+0x40201e01      c20040         l8ui a12, a0, 64
+0x40201e04      31f8ff         l32r a3, 0x40201de4                     ; [0x40201de4:4]=0x4571d000
+0x40201e07      12c1e0         addi a1, a1, -32
+0x40201e0a      c961           s32i.n a12, a1, 24
+0x40201e0c      0971           s32i.n a0, a1, 28
+0x40201e0e      d951           s32i.n a13, a1, 20
+0x40201e10      e941           s32i.n a14, a1, 16
+0x40201e12      f931           s32i.n a15, a1, 12
+0x40201e14      cd02           mov.n a12, a2
+0x40201e16      01f8ff         l32r a0, 0x40201df8                     ; [0x40201df8:4]=0x401063b0
+0x40201e19      c00000         callx0 a0
+0x40201e1c      31efff         l32r a3, 0x40201dd8                     ; [0x40201dd8:4]=0xc426aa3d
+0x40201e1f      96120a         bltz a2, 0x40201ec4
+0x40201e22      31f1ff         l32r a3, 0x40201de8                     ; [0x40201de8:4]=0x47803180
+0x40201e25      2d0c           mov.n a2, a12
+0x40201e27      01d2ff         l32r a0, 0x40201d70                     ; [0x40201d70:4]=0x40106324
+0x40201e2a      c00000         callx0 a0
+0x40201e2d      31ebff         l32r a3, 0x40201ddc                     ; [0x40201ddc:4]=0x4426aa3d
+0x40201e30      a61202         blti a2, 1, 0x40201e36
+0x40201e33      462300         j 0x40201ec4
+0x40201e36      31edff         l32r a3, 0x40201dec                     ; [0x40201dec:4]=0x477fff00
+0x40201e39      2d0c           mov.n a2, a12
+0x40201e3b      01cdff         l32r a0, 0x40201d70                     ; [0x40201d70:4]=0x40106324
+0x40201e3e      c00000         callx0 a0
+0x40201e41      31e7ff         l32r a3, 0x40201de0                     ; [0x40201de0:4]=0x44160000
+0x40201e44      e6127c         bgei a2, 1, 0x40201ec4
+0x40201e47      0c0d           movi.n a13, 0
+0x40201e49      31e9ff         l32r a3, 0x40201df0                     ; [0x40201df0:4]=0x3ffe9152
+0x40201e4c      f2cd01         addi a15, a13, 1
+0x40201e4f      302f90         addx2 a2, a15, a3
+0x40201e52      e21200         l16ui a14, a2, 0
+0x40201e55      e02e20         or a2, a14, a14
+0x40201e58      01a0ff         l32r a0, 0x40201cd8                     ; [0x40201cd8:4]=0x4000e2ac
+0x40201e5b      c00000         callx0 a0
+0x40201e5e      3d02           mov.n a3, a2
+0x40201e60      2d0c           mov.n a2, a12
+0x40201e62      01c3ff         l32r a0, 0x40201d70                     ; [0x40201d70:4]=0x40106324
+0x40201e65      c00000         callx0 a0
+0x40201e68      a61205         blti a2, 1, 0x40201e71
+0x40201e6b      dd0f           mov.n a13, a15
+0x40201e6d      06f6ff         j 0x40201e49
+0x40201e70      0021df         excw
+0x40201e73      ff20fd90f2..   { excw; excw }
+0x40201e7b      0f01e0ffc0..   { subx4 a0, a1, a0; excw }
+0x40201e83      32202d         l32i a3, a0, 180
+0x40201e86      0c01           movi.n a1, 0
+0x40201e88      deffc00000..   { sub a15, a15, a13; excw; excw }
+0x40201e90      2ec00191ff..   { slli a12, a0, 30; excw; excw }
+0x40201e98      203220         or a3, a2, a2
+0x40201e9b      c02c20         or a2, a12, a12
+0x40201e9e      018fff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201ea1      c00000         callx0 a0
+0x40201ea4      cd02           mov.n a12, a2
+0x40201ea6      2d0d           mov.n a2, a13
+0x40201ea8      01d5ff         l32r a0, 0x40201dfc                     ; [0x40201dfc:4]=0x4000e2a4
+0x40201eab      c00000         callx0 a0
+0x40201eae      3d02           mov.n a3, a2
+0x40201eb0      c02c20         or a2, a12, a12
+0x40201eb3      0187ff         l32r a0, 0x40201cd0                     ; [0x40201cd0:4]=0x4000c180
+0x40201eb6      c00000         callx0 a0
+0x40201eb9      31ceff         l32r a3, 0x40201df4                     ; [0x40201df4:4]=0x43480000
+0x40201ebc      01d1ff         l32r a0, 0x40201e00                     ; [0x40201e00:4]=0x4000c268
+0x40201ebf      c00000         callx0 a0
+0x40201ec2      3d02           mov.n a3, a2
+0x40201ec4      0871           l32i.n a0, a1, 28
+0x40201ec6      2d03           mov.n a2, a3
+0x40201ec8      c861           l32i.n a12, a1, 24
+0x40201eca      d851           l32i.n a13, a1, 20
+0x40201ecc      e841           l32i.n a14, a1, 16
+0x40201ece      f831           l32i.n a15, a1, 12
+0x40201ed0      12c120         addi a1, a1, 32
+0x40201ed3      0df0           ret.n
+0x40201ed5      000000         ill
+0x40201ed8      700d82         mull a0, a13, a7
+0x40201edb      4980           s32i.n a4, a0, 32
+0x40201edd      15d047         call4 0x40249be0
+0x40201ee0      0000c8         excw
+0x40201ee3      420000         l8ui a4, a0, 0
+0x40201ee6      f04100         break 1, 15
+0x40201ee9      002041         srli a2, a0, 0
+0x40201eec      fc62           bnez.n a2, 0x40201f26
+0x40201eee      104012         andbc b4, b0, b1
+0x40201ef1      c1d0c9         l32r a12, 0x401f4634                    ; [0x401f4634:4]=-1
+0x40201ef4      a1c1b6         l32r a10, 0x401ef9f8                    ; [0x401ef9f8:4]=-1
+0x40201ef7      fe2901c2dc..   { slli a2, a9, 17; excw; excw }
+0x40201eff      317efc         l32r a3, 0x402010f8                     ; [0x402010f8:4]=0
+0x40201f02      d991           s32i.n a13, a1, 36
+0x40201f04      09b1           s32i.n a0, a1, 44
+0x40201f06      e981           s32i.n a14, a1, 32
+0x40201f08      f26107         s32i a15, a1, 28
+0x40201f0b      d22c10         l32i a13, a12, 64
+0x40201f0e      01f7ff         l32r a0, 0x40201eec                     ; [0x40201eec:4]=0x401062fc
+0x40201f11      c00000         callx0 a0
+0x40201f14      cce2           bnez.n a2, 0x40201f26
+0x40201f16      220c38         l8ui a2, a12, 56
+0x40201f19      8c42           beqz.n a2, 0x40201f21
+0x40201f1b      21f1ff         l32r a2, 0x40201ee0                     ; [0x40201ee0:4]=0x42c80000
+0x40201f1e      860000         j 0x40201f24
+0x40201f21      21f0ff         l32r a2, 0x40201ee4                     ; [0x40201ee4:4]=0x41f00000
+0x40201f24      29fc           s32i.n a2, a12, 60
+0x40201f26      38dc           l32i.n a3, a12, 52
+0x40201f28      21b2ff         l32r a2, 0x40201df0                     ; [0x40201df0:4]=0x3ffe9152
+0x40201f2b      e22c0f         l32i a14, a12, 60
+0x40201f2e      202390         addx2 a2, a3, a2
+0x40201f31      2212c8         l16ui a2, a2, 0x190
+0x40201f34      01b2ff         l32r a0, 0x40201dfc                     ; [0x40201dfc:4]=0x4000e2a4
+0x40201f37      c00000         callx0 a0
+0x40201f3a      fd02           mov.n a15, a2
+0x40201f3c      220c38         l8ui a2, a12, 56
+0x40201f3f      c1e6ff         l32r a12, 0x40201ed8                    ; [0x40201ed8:4]=0x49820d70
+0x40201f42      160201         beqz a2, 0x40201f56
+0x40201f45      31e8ff         l32r a3, 0x40201ee8                     ; [0x40201ee8:4]=0x41200000
+0x40201f48      e02e20         or a2, a14, a14
+0x40201f4b      0164ff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201f4e      c00000         callx0 a0
+0x40201f51      c1e2ff         l32r a12, 0x40201edc                    ; [0x40201edc:4]=0x47d01580
+0x40201f54      ed02           mov.n a14, a2
+0x40201f56      3d0e           mov.n a3, a14
+0x40201f58      2d0d           mov.n a2, a13
+0x40201f5a      0186ff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40201f5d      c00000         callx0 a0
+0x40201f60      4d02           mov.n a4, a2
+0x40201f62      3d0e           mov.n a3, a14
+0x40201f64      2d0c           mov.n a2, a12
+0x40201f66      4911           s32i.n a4, a1, 4
+0x40201f68      015aff         l32r a0, 0x40201cd0                     ; [0x40201cd0:4]=0x4000c180
+0x40201f6b      c00000         callx0 a0
+0x40201f6e      4811           l32i.n a4, a1, 4
+0x40201f70      3d02           mov.n a3, a2
+0x40201f72      2d04           mov.n a2, a4
+0x40201f74      015aff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201f77      c00000         callx0 a0
+0x40201f7a      ed02           mov.n a14, a2
+0x40201f7c      3d0f           mov.n a3, a15
+0x40201f7e      2d0d           mov.n a2, a13
+0x40201f80      017dff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40201f83      c00000         callx0 a0
+0x40201f86      4d02           mov.n a4, a2
+0x40201f88      3d0f           mov.n a3, a15
+0x40201f8a      2d0c           mov.n a2, a12
+0x40201f8c      426101         s32i a4, a1, 4
+0x40201f8f      0150ff         l32r a0, 0x40201cd0                     ; [0x40201cd0:4]=0x4000c180
+0x40201f92      c00000         callx0 a0
+0x40201f95      4811           l32i.n a4, a1, 4
+0x40201f97      3d02           mov.n a3, a2
+0x40201f99      2d04           mov.n a2, a4
+0x40201f9b      0150ff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201f9e      c00000         callx0 a0
+0x40201fa1      3d0e           mov.n a3, a14
+0x40201fa3      0197ff         l32r a0, 0x40201e00                     ; [0x40201e00:4]=0x4000c268
+0x40201fa6      c00000         callx0 a0
+0x40201fa9      3d02           mov.n a3, a2
+0x40201fab      2170ff         l32r a2, 0x40201d6c                     ; [0x40201d6c:4]=0x46fffe00
+0x40201fae      014bff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201fb1      c00000         callx0 a0
+0x40201fb4      3d02           mov.n a3, a2
+0x40201fb6      2801           l32i.n a2, a1, 0
+0x40201fb8      0149ff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201fbb      c00000         callx0 a0
+0x40201fbe      3d0e           mov.n a3, a14
+0x40201fc0      0144ff         l32r a0, 0x40201cd0                     ; [0x40201cd0:4]=0x4000c180
+0x40201fc3      c00000         callx0 a0
+0x40201fc6      ed02           mov.n a14, a2
+0x40201fc8      3d0e           mov.n a3, a14
+0x40201fca      2d0d           mov.n a2, a13
+0x40201fcc      018dff         l32r a0, 0x40201e00                     ; [0x40201e00:4]=0x4000c268
+0x40201fcf      c00000         callx0 a0
+0x40201fd2      dd02           mov.n a13, a2
+0x40201fd4      3d0c           mov.n a3, a12
+0x40201fd6      2d0e           mov.n a2, a14
+0x40201fd8      0167ff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40201fdb      c00000         callx0 a0
+0x40201fde      3d0d           mov.n a3, a13
+0x40201fe0      013fff         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x40201fe3      c00000         callx0 a0
+0x40201fe6      08b1           l32i.n a0, a1, 44
+0x40201fe8      c8a1           l32i.n a12, a1, 40
+0x40201fea      d891           l32i.n a13, a1, 36
+0x40201fec      e881           l32i.n a14, a1, 32
+0x40201fee      f871           l32i.n a15, a1, 28
+0x40201ff0      12c130         addi a1, a1, 48
+0x40201ff3      0df0           ret.n
+0x40201ff5      000000         ill
+0x40201ff8      e3385e         excw
+0x40201ffb      c4e338         excw
+0x40201ffe      5e448804ff..   { excw; excw; excw }
+0x40202006      ff3f00007a..   { excw; excw }
+0x4020200e      ff3f9b7f00..   { excw; excw }
+0x40202016      fe3f00f9fe..   { excw; excw; excw }
+0x4020201e      104012         andbc b4, b0, b1
+0x40202021      c1f021         l32r a12, 0x401ca7e4                    ; [0x401ca7e4:4]=-1
+0x40202024      f7ffd9         bbsi a15, 31, 0x40202001
+0x40202027      110931         l32r a1, 0x401ce44c                     ; [0x401ce44c:4]=-1
+0x4020202a      c921           s32i.n a12, a1, 8
+0x4020202c      220200         l8ui a2, a2, 0
+0x4020202f      d1f5ff         l32r a13, 0x40202004                    ; [0x40202004:4]=0x3fff19f0
+0x40202032      8c62           beqz.n a2, 0x4020203c
+0x40202034      21f5ff         l32r a2, 0x40202008                     ; [0x40202008:4]=0x447a0000
+0x40202037      290d           s32i.n a2, a13, 0
+0x40202039      861300         j 0x4020208b
+0x4020203c      c5d3ff         call0 0x40201d7c
+0x4020203f      31f3ff         l32r a3, 0x4020200c                     ; [0x4020200c:4]=0x3fff19f4
+0x40202042      002211         slli a2, a2, 16
+0x40202045      202031         srai a2, a2, 16
+0x40202048      225300         s16i a2, a3, 0
+0x4020204b      32a063         movi a3, 99
+0x4020204e      c1eaff         l32r a12, 0x40201ff8                    ; [0x40201ff8:4]=0xc45e38e3
+0x40202051      27a333         bge a3, a2, 0x40202088
+0x40202054      31efff         l32r a3, 0x40202010                     ; [0x40202010:4]=0x7f9b
+0x40202057      c1e9ff         l32r a12, 0x40201ffc                    ; [0x40201ffc:4]=0x445e38e3
+0x4020205a      27232a         blt a3, a2, 0x40202088
+0x4020205d      415cfe         l32r a4, 0x402019d0                     ; [0x402019d0:4]=0x3fff1490
+0x40202060      42d405         addmi a4, a4, 0x500
+0x40202063      32240b         l32i a3, a4, 44
+0x40202066      48a4           l32i.n a4, a4, 40
+0x40202068      3022c0         sub a2, a2, a3
+0x4020206b      105211         slli a5, a2, 15
+0x4020206e      2025c0         sub a2, a5, a2
+0x40202071      3034c0         sub a3, a4, a3
+0x40202074      0118ff         l32r a0, 0x40201cd4                     ; [0x40201cd4:4]=0x4000dc88
+0x40202077      c00000         callx0 a0
+0x4020207a      0117ff         l32r a0, 0x40201cd8                     ; [0x40201cd8:4]=0x4000e2ac
+0x4020207d      c00000         callx0 a0
+0x40202080      c5e6ff         call0 0x40201ef0
+0x40202083      05d8ff         call0 0x40201e04
+0x40202086      cd02           mov.n a12, a2
+0x40202088      c26d00         s32i a12, a13, 0
+0x4020208b      3197ff         l32r a3, 0x40201ee8                     ; [0x40201ee8:4]=0x41200000
+0x4020208e      c02c20         or a2, a12, a12
+0x40202091      0138ff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40202094      c00000         callx0 a0
+0x40202097      01e1ff         l32r a0, 0x4020201c                     ; [0x4020201c:4]=0x40106420
+0x4020209a      c00000         callx0 a0
+0x4020209d      31ddff         l32r a3, 0x40202014                     ; [0x40202014:4]=0x3ffef8fc
+0x402020a0      002211         slli a2, a2, 16
+0x402020a3      204031         srai a4, a2, 16
+0x402020a6      202831         srai a2, a2, 24
+0x402020a9      224300         s8i a2, a3, 0
+0x402020ac      424301         s8i a4, a3, 1
+0x402020af      31daff         l32r a3, 0x40202018                     ; [0x40202018:4]=0x3ffef900
+0x402020b2      c02c20         or a2, a12, a12
+0x402020b5      05dd19         call0 0x4021be88
+0x402020b8      0831           l32i.n a0, a1, 12
+0x402020ba      c821           l32i.n a12, a1, 8
+0x402020bc      d811           l32i.n a13, a1, 4
+0x402020be      12c110         addi a1, a1, 16
+0x402020c1      0df0           ret.n
+0x402020c3      00748c         excw
+0x402020c6      fe3f12c1c0..   { excw; excw; excw }
+0x402020ce      0221ed         l32i a0, a1, 0x3b4
+0x402020d1      fed9d1dd03..   { mul16s a13, a9, a15; excw; excw }
+0x402020d9      f1e9c1         l32r a15, 0x401f2880                    ; [0x401f2880:4]=-1
+0x402020dc      f9b1           s32i.n a15, a1, 44
+0x402020de      05e511         call0 0x40213f30
+0x402020e1      e13bfe         l32r a14, 0x402019d0                    ; [0x402019d0:4]=0x3fff1490
+0x402020e4      3120ff         l32r a3, 0x40201d64                     ; [0x40201d64:4]=0x3fff19d8
+0x402020e7      e0ed90         addx2 a14, a13, a14
+0x402020ea      d29e04         l16si a13, a14, 8
+0x402020ed      225300         s16i a2, a3, 0
+0x402020f0      d022c0         sub a2, a2, a13
+0x402020f3      01f9fe         l32r a0, 0x40201cd8                     ; [0x40201cd8:4]=0x4000e2ac
+0x402020f6      c00000         callx0 a0
+0x402020f9      fd02           mov.n a15, a2
+0x402020fb      229e05         l16si a2, a14, 10
+0x402020fe      d022c0         sub a2, a2, a13
+0x40202101      01f5fe         l32r a0, 0x40201cd8                     ; [0x40201cd8:4]=0x4000e2ac
+0x40202104      c00000         callx0 a0
+0x40202107      3d02           mov.n a3, a2
+0x40202109      2d0f           mov.n a2, a15
+0x4020210b      01f4fe         l32r a0, 0x40201cdc                     ; [0x40201cdc:4]=0x40106240
+0x4020210e      c00000         callx0 a0
+0x40202111      3116ff         l32r a3, 0x40201d6c                     ; [0x40201d6c:4]=0x46fffe00
+0x40202114      0118ff         l32r a0, 0x40201d74                     ; [0x40201d74:4]=0x4000c3dc
+0x40202117      c00000         callx0 a0
+0x4020211a      01c0ff         l32r a0, 0x4020201c                     ; [0x4020201c:4]=0x40106420
+0x4020211d      c00000         callx0 a0
+0x40202120      003211         slli a3, a2, 16
+0x40202123      0ca4           movi.n a4, 10
+0x40202125      cb21           addi.n a2, a1, 12
+0x40202127      303031         srai a3, a3, 16
+0x4020212a      c57e16         call0 0x40218918
+0x4020212d      2d01           mov.n a2, a1
+0x4020212f      32c10c         addi a3, a1, 12
+0x40202132      c56f16         call0 0x40218830
+0x40202135      31e3ff         l32r a3, 0x402020c4                     ; [0x402020c4:4]=0x3ffe8c74
+0x40202138      2d01           mov.n a2, a1
+0x4020213a      c5b416         call0 0x40218c88
+0x4020213d      3d02           mov.n a3, a2
+0x4020213f      2d0c           mov.n a2, a12
+0x40202141      c56e16         call0 0x40218830
+0x40202144      2d01           mov.n a2, a1
+0x40202146      853216         call0 0x40218470
+0x40202149      cb21           addi.n a2, a1, 12
+0x4020214b      453216         call0 0x40218470
+0x4020214e      08f1           l32i.n a0, a1, 60
+0x40202150      2d0c           mov.n a2, a12
+0x40202152      d8d1           l32i.n a13, a1, 52
+0x40202154      c8e1           l32i.n a12, a1, 56
+0x40202156      e8c1           l32i.n a14, a1, 48
+0x40202158      f8b1           l32i.n a15, a1, 44
+0x4020215a      12c140         addi a1, a1, 64
+0x4020215d      0df0           ret.n
+0x4020215f      008021         srai a8, a0, 0
+0x40202162      204012         andbc b4, b0, b2
+0x40202165      c1f009         l32r a12, 0x401c4928                    ; [0x401c4928:4]=-1
+0x40202168      312020         l32r a3, 0x401ca1e8                     ; [0x401ca1e8:4]=-1
+0x4020216b      f4f682         excw
+0x4020216e      5d31           excw
+0x40202170      fcff           bnez.n a15, 0x402021b3
+0x40202172      3022a0         addx4 a2, a2, a3
+0x40202175      3802           l32i.n a3, a2, 0
+0x40202177      21c3fe         l32r a2, 0x40201c84                     ; [0x40201c84:4]=0x3fff19dc
+0x4020217a      a00300         jx a3
+0x4020217d      000000         ill
+0x40202180      a02120         or a2, a1, a10
+0x40202183      40a521         srai a10, a4, 5
+0x40202186      2040aa         floor.s a4, f0, 2
+0x40202189      212040         l32r a2, 0x401d220c                     ; [0x401d220c:4]=-1
+0x4020218c      af212040b5..   { or a2, a1, a10; excw }
+0x40202194      bb21           addi.n a2, a1, 11
+0x40202196      2040c1         mul16u a4, a0, a2
+0x40202199      212040         l32r a2, 0x401d221c                     ; [0x401d221c:4]=-1
+0x4020219c      c72120         blt a1, a12, 0x402021c0
+0x4020219f      400c03         rsr.scompare1 a4
+0x402021a2      060900         j 0x402021ca
+0x402021a5      2c03           movi.n a3, 32
+0x402021a7      c60700         j 0x402021ca
+0x402021aa      4c03           movi.n a3, 64
+0x402021ac      860600         j 0x402021ca
+0x402021af      32a060         movi a3, 96
+0x402021b2      060500         j 0x402021ca
+0x402021b5      32a080         movi a3, 128
+0x402021b8      860300         j 0x402021ca
+0x402021bb      32a0a0         movi a3, 160
+0x402021be      060200         j 0x402021ca
+0x402021c1      32a0c0         movi a3, 192
+0x402021c4      860000         j 0x402021ca
+0x402021c7      32a0e0         movi a3, 224
+0x402021ca      c5521a         call0 0x4021c6f8
+0x402021cd      0831           l32i.n a0, a1, 12
+0x402021cf      12c110         addi a1, a1, 16
+0x402021d2      0df0           ret.n
+0x402021d4      9187fe         l32r a9, 0x40201bf0                     ; [0x40201bf0:4]=0x12ff7821
+0x402021d7      3f12c1c0d2..   { mul16u a1, a2, a3; excw }
+0x402021df      64fe32         excw
+0x402021e2      a544d0         call8 0x401d262c
+0x402021e5      2d20           excw
+0x402021e7      c2610e         s32i a12, a1, 56
+0x402021ea      e9c1           s32i.n a14, a1, 48
+0x402021ec      09f1           s32i.n a0, a1, 60
+0x402021ee      f9b1           s32i.n a15, a1, 44
+0x402021f0      ed0d           mov.n a14, a13
+0x402021f2      457108         call0 0x4020a908
+0x402021f5      0c0c           movi.n a12, 0
+0x402021f7      d2a544         movi a13, 0x544
+0x402021fa      c03c20         or a3, a12, a12
+0x402021fd      2d0e           mov.n a2, a14
+0x402021ff      45ef19         call0 0x4021c0f4
+0x40202202      41f3fd         l32r a4, 0x402019d0                     ; [0x402019d0:4]=0x3fff1490
+0x40202205      4a3c           add.n a3, a12, a4
+0x40202207      224300         s8i a2, a3, 0
+0x4020220a      1bcc           addi.n a12, a12, 1
+0x4020220c      fd04           mov.n a15, a4
+0x4020220e      d79ce8         bne a12, a13, 0x402021fa
+0x40202211      0c03           movi.n a3, 0
+0x40202213      2d0e           mov.n a2, a14
+0x40202215      c5ed19         call0 0x4021c0f4
+0x40202218      32a0aa         movi a3, 170
+0x4020221b      371202         beq a2, a3, 0x40202221
+0x4020221e      8582ff         call0 0x40201a48
+0x40202221      221f0a         l16ui a2, a15, 20
+0x40202224      c5f3ff         call0 0x40202164
+0x40202227      217bff         l32r a2, 0x40202014                     ; [0x40202014:4]=0x3ffef8fc
+0x4020222a      0c33           movi.n a3, 3
+0x4020222c      22d201         addmi a2, a2, 0x100
+0x4020222f      3242a4         s8i a3, a2, 164
+0x40202232      2c53           movi.n a3, 37
+0x40202234      3242a5         s8i a3, a2, 165
+0x40202237      31e7ff         l32r a3, 0x402021d4                     ; [0x402021d4:4]=0x3ffe8791
+0x4020223a      2d01           mov.n a2, a1
+0x4020223c      454016         call0 0x40218644
+0x4020223f      2191fe         l32r a2, 0x40201c84                     ; [0x40201c84:4]=0x3fff19dc
+0x40202242      c54b1a         call0 0x4021c700
+0x40202245      0ca4           movi.n a4, 10
+0x40202247      3d02           mov.n a3, a2
+0x40202249      cb21           addi.n a2, a1, 12
+0x4020224b      c56c16         call0 0x40218918
+0x4020224e      cb31           addi.n a3, a1, 12
+0x40202250      102120         or a2, a1, a1
+0x40202253      859f16         call0 0x40218c4c
+0x40202256      3d02           mov.n a3, a2
+0x40202258      2198fb         l32r a2, 0x402010b8                     ; [0x402010b8:4]=0x3fff2170
+0x4020225b      c50f15         call0 0x40217358
+0x4020225e      cb21           addi.n a2, a1, 12
+0x40202260      c52016         call0 0x40218470
+0x40202263      2d01           mov.n a2, a1
+0x40202265      852016         call0 0x40218470
+0x40202268      08f1           l32i.n a0, a1, 60
+0x4020226a      c8e1           l32i.n a12, a1, 56
+0x4020226c      d8d1           l32i.n a13, a1, 52
+0x4020226e      e8c1           l32i.n a14, a1, 48
+0x40202270      f8b1           l32i.n a15, a1, 44
+0x40202272      12c140         addi a1, a1, 64
+0x40202275      0df0           ret.n
+0x40202277      0012c1         mul16u a1, a2, a0
+0x4020227a      f0c921         srai a12, a15, 9
+0x4020227d      d911           s32i.n a13, a1, 4
+0x4020227f      e901           s32i.n a14, a1, 0
+0x40202281      0931           s32i.n a0, a1, 12
+0x40202283      dd02           mov.n a13, a2
+0x40202285      0c0c           movi.n a12, 0
+0x40202287      0c9e           movi.n a14, 9
+0x40202289      460500         j 0x402022a2
+0x4020228c      00003d         excw
+0x4020228f      0c2d           movi.n a13, 2
+0x40202291      0dc5           excw
+0x40202293      d816           l32i.n a13, a6, 4
+0x40202295      32c2d0         addi a3, a2, -48
+0x40202298      37be04         bgeu a14, a3, 0x402022a0
+0x4020229b      22c2d2         addi a2, a2, -46
+0x4020229e      cce2           bnez.n a2, 0x402022b0
+0x402022a0      1bcc           addi.n a12, a12, 1
+0x402022a2      d02d20         or a2, a13, a13
+0x402022a5      0537ff         call0 0x40201618
+0x402022a8      273ce2         bltu a12, a2, 0x4020228e
+0x402022ab      0c12           movi.n a2, 1
+0x402022ad      460000         j 0x402022b2
+0x402022b0      0c02           movi.n a2, 0
+0x402022b2      0831           l32i.n a0, a1, 12
+0x402022b4      c821           l32i.n a12, a1, 8
+0x402022b6      d811           l32i.n a13, a1, 4
+0x402022b8      e801           l32i.n a14, a1, 0
+0x402022ba      12c110         addi a1, a1, 16
+0x402022bd      0df0           ret.n
+0x402022bf      00b887         excw
+0x402022c2      fe3f12c1d0..   { excw; excw; excw }
+0x402022ca      30e320         or a14, a3, a3
+0x402022cd      31d3fd         l32r a3, 0x40201a1c                     ; [0x40201a1c:4]=0x3ffe88a2
+0x402022d0      c2610a         s32i a12, a1, 40
+0x402022d3      d991           s32i.n a13, a1, 36
+0x402022d5      09b1           s32i.n a0, a1, 44
+0x402022d7      cd02           mov.n a12, a2
+0x402022d9      0c0d           movi.n a13, 0
+0x402022db      853616         call0 0x40218644
+0x402022de      381e           l32i.n a3, a14, 4
+0x402022e0      0ca4           movi.n a4, 10
+0x402022e2      000d40         ssr a13
+0x402022e5      303091         srl a3, a3
+0x402022e8      22c10c         addi a2, a1, 12
+0x402022eb      303074         extui a3, a3, 0, 8
+0x402022ee      856216         call0 0x40218918
+0x402022f1      102120         or a2, a1, a1
+0x402022f4      32c10c         addi a3, a1, 12
+0x402022f7      855316         call0 0x40218830
+0x402022fa      31f1ff         l32r a3, 0x402022c0                     ; [0x402022c0:4]=0x3ffe87b8
+0x402022fd      2d01           mov.n a2, a1
+0x402022ff      859816         call0 0x40218c88
+0x40202302      3d02           mov.n a3, a2
+0x40202304      2d0c           mov.n a2, a12
+0x40202306      457a16         call0 0x40218aac
+0x40202309      2d01           mov.n a2, a1
+0x4020230b      451616         call0 0x40218470
+0x4020230e      cb21           addi.n a2, a1, 12
+0x40202310      c51516         call0 0x40218470
+0x40202313      8bdd           addi.n a13, a13, 8
+0x40202315      1c82           movi.n a2, 24
+0x40202317      279dc3         bne a13, a2, 0x402022de
+0x4020231a      320e07         l8ui a3, a14, 7
+0x4020231d      2d01           mov.n a2, a1
+0x4020231f      0ca4           movi.n a4, 10
+0x40202321      455f16         call0 0x40218918
+0x40202324      3d01           mov.n a3, a1
+0x40202326      2d0c           mov.n a2, a12
+0x40202328      057816         call0 0x40218aac
+0x4020232b      2d01           mov.n a2, a1
+0x4020232d      051416         call0 0x40218470
+0x40202330      08b1           l32i.n a0, a1, 44
+0x40202332      2d0c           mov.n a2, a12
+0x40202334      d891           l32i.n a13, a1, 36
+0x40202336      c8a1           l32i.n a12, a1, 40
+0x40202338      e881           l32i.n a14, a1, 32
+0x4020233a      12c130         addi a1, a1, 48
+0x4020233d      0df0           ret.n
+0x4020233f      009c87         excw
+0x40202342      fe3f041aff..   { extui a3, a15, 15, 1; excw; excw }
+0x4020234a      fe3fc487fe..   { extui a3, a15, 15, 13; excw; excw }
+0x40202352      fe3f12c1f0..   { excw; excw; excw }
+0x4020235a      57fb31         bbsi a11, 21, 0x4020238f
+0x4020235d      f9ff           s32i.n a15, a15, 60
+0x4020235f      2d0c           mov.n a2, a12
+0x40202361      d911           s32i.n a13, a1, 4
+0x40202363      026103         s32i a0, a1, 12
+0x40202366      45f814         call0 0x402172ec
+0x40202369      d1f6ff         l32r a13, 0x40202344                    ; [0x40202344:4]=0x3fff1a04
+0x4020236c      31b5fd         l32r a3, 0x40201a40                     ; [0x40201a40:4]=0x3fff1585
+0x4020236f      41aafd         l32r a4, 0x40201a18                     ; [0x40201a18:4]=0x3fff1685
+0x40202372      51abfd         l32r a5, 0x40201a20                     ; [0x40201a20:4]=0x3fff16e9
+0x40202375      2d0d           mov.n a2, a13
+0x40202377      450214         call0 0x4021639c
+0x4020237a      9c12           beqz.n a2, 0x4020238f
+0x4020237c      31f3ff         l32r a3, 0x40202348                     ; [0x40202348:4]=0x3ffe87ba
+0x4020237f      2d0c           mov.n a2, a12
+0x40202381      c5ff14         call0 0x40217380
+0x40202384      31aafd         l32r a3, 0x40201a2c                     ; [0x40201a2c:4]=0x3fff18ec
+0x40202387      2d0d           mov.n a2, a13
+0x40202389      851814         call0 0x40216514
+0x4020238c      060800         j 0x402023b0
+0x4020238f      31efff         l32r a3, 0x4020234c                     ; [0x4020234c:4]=0x3ffe87c4
+0x40202392      2d0c           mov.n a2, a12
+0x40202394      45f514         call0 0x402172ec
+0x40202397      2d0d           mov.n a2, a13
+0x40202399      05551a         call0 0x4021c8ec
+0x4020239c      203220         or a3, a2, a2
+0x4020239f      42a00a         movi a4, 10
+0x402023a2      c02c20         or a2, a12, a12
+0x402023a5      450d15         call0 0x4021747c
+0x402023a8      31eaff         l32r a3, 0x40202350                     ; [0x40202350:4]=0x3ffe87d0
+0x402023ab      2d0c           mov.n a2, a12
+0x402023ad      05fd14         call0 0x40217380
+0x402023b0      0831           l32i.n a0, a1, 12
+0x402023b2      c821           l32i.n a12, a1, 8
+0x402023b4      d811           l32i.n a13, a1, 4
+0x402023b6      12c110         addi a1, a1, 16
+0x402023b9      0df0           ret.n
+0x402023bb      001008         lsx f1, a0, a0
+0x402023be      104012         andbc b4, b0, b1
+0x402023c1      c1f00c         l32r a12, 0x401c5784                    ; [0x401c5784:4]=-1
+0x402023c4      520931         l8ui a5, a9, 49
+0x402023c7      01fdff         l32r a0, 0x402023bc                     ; [0x402023bc:4]=0x40100810
+0x402023ca      c00000         callx0 a0
+0x402023cd      0831           l32i.n a0, a1, 12
+0x402023cf      4d02           mov.n a4, a2
+0x402023d1      0c13           movi.n a3, 1
+0x402023d3      0c02           movi.n a2, 0
+0x402023d5      402393         movnez a2, a3, a4
+0x402023d8      12c110         addi a1, a1, 16
+0x402023db      0df0           ret.n
+0x402023dd      000000         ill
+0x402023e0      e484fe         excw
+0x402023e3      3f001aff3f..   { excw; excw }
+0x402023eb      22a096         movi a2, 150
+0x402023ee      2903           s32i.n a2, a3, 0
+0x402023f0      31fdff         l32r a3, 0x402023e4                     ; [0x402023e4:4]=0x3fff1a00
+0x402023f3      2903           s32i.n a2, a3, 0
+0x402023f5      0df0           ret.n
+0x402023f7      00401f         excw
+0x402023fa      000021         ill

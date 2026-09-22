@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Update</title>
+    <style>
+        div,
+        input,
+        select {
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        select {
+            width: 60%
+        }
+
+        legend {
+            padding: 8px;
+            font-size: 1.5em;
+            font-weight: bold
+        }
+
+        button {
+            border: 0;
+            border-radius: 0.3rem;
+            background-color: #16A1E7;
+            color: #fff;
+            line-height: 2.4rem;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        body {
+            text-align: center;
+            font-family: verdana;
+        }
+
+        fieldset {
+            border-radius: 0.3rem;
+            margin: 0px;
+        }
+    </style>
+    <script>
+        var s = "下载中"; var g = 0; var c = 8;
+        function $(id) { return document.getElementById(id); };
+        function send(a) {
+            if (a == 1) { g = 1; }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var r = this.responseText;
+                    if (r == "err1") {
+                        g = 0; $("update_progress").innerHTML = "升级失败";
+                    } else if (r == "err2") {
+                        g = 0; $("update_progress").innerHTML = "无最新固件";
+                    } else if (r == "ok") {
+                        g = 0; $("update_progress").innerHTML = "固件更新完成";
+                    }
+                }
+            }
+            var ver = $("ver").value;
+            xhttp.open("GET", "startUpdate?id=update&value=" + a + "&ver=" + ver, true);
+            xhttp.send();
+        }
+        setInterval(function () {
+            if (g) {
+                s += "."; c++; g++;
+                if (c > 32) { c = 0; s += "<br>"; send(0); }
+                if (g > 900) { g = 0; s = "<br>固件更新完成，不要关闭电源，<br>模块将自动重启" }
+                $("update_progress").innerHTML = s;
+            }
+        }, 100);
+    </script>
+</head>
+
+<body>
+    <div style='text-align:left;display:inline-block;min-width:260px;'>
+        <fieldset>
+            <legend>更新模块固件</legend>
+            <div><label for='ver'>固件版本</label> <select id="ver" name='ver'>
+                    <option value="0" selected="selected">最新版</option>
+                    <option>V1.20</option>
+                    <option>V1.10</option>
+                    <option>V1.00</option>
+                </select>
+            </div>
+            <div id="update_progress">
+                <button onclick="send(1)">开始</button>
+            </div>
+        </fieldset>
+    </div>
+</body>
+
+</html>

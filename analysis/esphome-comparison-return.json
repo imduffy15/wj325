@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2026-09-22T16:40:28Z",
+    "temperature": 59.29559,
+    "voltage": 1.534531
+  },
+  {
+    "time": "2026-09-22T16:40:34Z",
+    "temperature": 59.22406,
+    "voltage": 1.534281
+  },
+  {
+    "time": "2026-09-22T16:40:40Z",
+    "temperature": 58.67996,
+    "voltage": 1.532125
+  },
+  {
+    "time": "2026-09-22T16:40:46Z",
+    "temperature": 59.43866,
+    "voltage": 1.535094
+  },
+  {
+    "time": "2026-09-22T16:40:52Z",
+    "temperature": 58.86816,
+    "voltage": 1.532813
+  },
+  {
+    "time": "2026-09-22T16:40:58Z",
+    "temperature": 58.91528,
+    "voltage": 1.533031
+  },
+  {
+    "time": "2026-09-22T16:41:04Z",
+    "temperature": 59.53403,
+    "voltage": 1.535406
+  },
+  {
+    "time": "2026-09-22T16:41:10Z",
+    "temperature": 58.96231,
+    "voltage": 1.533219
+  },
+  {
+    "time": "2026-09-22T16:41:16Z",
+    "temperature": 58.72699,
+    "voltage": 1.532344
+  },
+  {
+    "time": "2026-09-22T16:41:22Z",
+    "temperature": 59.41479,
+    "voltage": 1.535
+  },
+  {
+    "time": "2026-09-22T16:41:28Z",
+    "temperature": 59.22406,
+    "voltage": 1.534313
+  },
+  {
+    "time": "2026-09-22T16:41:34Z",
+    "temperature": 58.39761,
+    "voltage": 1.531063
+  },
+  {
+    "time": "2026-09-22T16:41:40Z",
+    "temperature": 59.10489,
+    "voltage": 1.53375
+  },
+  {
+    "time": "2026-09-22T16:41:46Z",
+    "temperature": 59.53403,
+    "voltage": 1.535438
+  },
+  {
+    "time": "2026-09-22T16:41:52Z",
+    "temperature": 58.72699,
+    "voltage": 1.532344
+  },
+  {
+    "time": "2026-09-22T16:41:58Z",
+    "temperature": 59.12872,
+    "voltage": 1.533906
+  },
+  {
+    "time": "2026-09-22T16:42:04Z",
+    "temperature": 59.48636,
+    "voltage": 1.53525
+  },
+  {
+    "time": "2026-09-22T16:42:10Z",
+    "temperature": 58.58582,
+    "voltage": 1.531813
+  },
+  {
+    "time": "2026-09-22T16:42:16Z",
+    "temperature": 59.12872,
+    "voltage": 1.533906
+  },
+  {
+    "time": "2026-09-22T16:42:22Z",
+    "temperature": 59.36713,
+    "voltage": 1.534844
+  },
+  {
+    "time": "2026-09-22T16:42:28Z",
+    "temperature": 58.67996,
+    "voltage": 1.532156
+  }
+]

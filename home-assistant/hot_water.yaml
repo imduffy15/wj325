@@ -1,0 +1,100 @@
+# Home Assistant package: temperature demand only; no boiler/immersion actions.
+# Copy to config/packages/hot_water.yaml. See home-assistant/README.md.
+input_boolean:
+  hot_water_automatic_heating_enabled:
+    name: Hot Water Automatic Heating Enabled
+    icon: mdi:water-boiler-auto
+    initial: false
+  hot_water_heating_request:
+    name: Hot Water Heating Request
+    icon: mdi:water-boiler
+    initial: false
+
+input_number:
+  hot_water_start_temperature:
+    name: Hot Water Start Temperature
+    min: 30
+    max: 60
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+  hot_water_stop_temperature:
+    name: Hot Water Stop Temperature
+    min: 45
+    max: 70
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+
+template:
+  - binary_sensor:
+      - name: Hot Water Heating Input Valid
+        default_entity_id: binary_sensor.hot_water_heating_input_valid
+        unique_id: wj325_hot_water_heating_input_valid
+        state: >-
+          {% set temp = states('sensor.hot_water_tank_top_pt1000_temperature') %}
+          {% set start = states('input_number.hot_water_start_temperature') %}
+          {% set stop = states('input_number.hot_water_stop_temperature') %}
+          {% set sensor = states.sensor.hot_water_tank_top_pt1000_temperature %}
+          {{ is_number(temp) and 0 <= temp | float(0) <= 100
+             and is_number(start) and is_number(stop)
+             and 30 <= start | float(0) <= 60
+             and 45 <= stop | float(0) <= 70
+             and stop | float(0) > start | float(0)
+             and is_state('binary_sensor.hot_water_tank_top_measurement_problem', 'off')
+             and sensor is defined and sensor is not none
+             and (now() - sensor.last_reported).total_seconds() < 180 }}
+      - name: Hot Water Top Below Start Temperature
+        default_entity_id: binary_sensor.hot_water_top_below_start_temperature
+        unique_id: wj325_hot_water_top_below_start_temperature
+        delay_on:
+          minutes: 2
+        state: >-
+          {{ is_state('input_boolean.hot_water_automatic_heating_enabled', 'on')
+             and is_state('binary_sensor.hot_water_heating_input_valid', 'on')
+             and states('sensor.hot_water_tank_top_pt1000_temperature') | float(999)
+                 < states('input_number.hot_water_start_temperature') | float(0) }}
+
+automation:
+  - id: wj325_hot_water_heating_demand
+    alias: Hot Water - Heating Demand
+    description: >-
+      Requests heat after the top is below the start threshold for two minutes.
+      Clears at the stop threshold, on invalid input, or when disabled.
+      Drives only a helper; no physical boiler controls are connected.
+    mode: single
+    triggers:
+      - trigger: homeassistant
+        event: start
+      - trigger: time_pattern
+        seconds: "/30"
+      - trigger: state
+        entity_id:
+          - input_boolean.hot_water_automatic_heating_enabled
+          - input_number.hot_water_start_temperature
+          - input_number.hot_water_stop_temperature
+          - binary_sensor.hot_water_heating_input_valid
+          - binary_sensor.hot_water_top_below_start_temperature
+          - sensor.hot_water_tank_top_pt1000_temperature
+          - binary_sensor.hot_water_tank_top_measurement_problem
+    actions:
+      - choose:
+          - conditions: >-
+              {{ not is_state('input_boolean.hot_water_automatic_heating_enabled', 'on')
+                 or not is_state('binary_sensor.hot_water_heating_input_valid', 'on')
+                 or not is_number(states('sensor.hot_water_tank_top_pt1000_temperature'))
+                 or not is_state('binary_sensor.hot_water_tank_top_measurement_problem', 'off')
+                 or states('sensor.hot_water_tank_top_pt1000_temperature') | float(999)
+                     >= states('input_number.hot_water_stop_temperature') | float(0) }}
+            sequence:
+              - action: input_boolean.turn_off
+                target:
+                  entity_id: input_boolean.hot_water_heating_request
+          - conditions: >-
+              {{ is_state('binary_sensor.hot_water_top_below_start_temperature', 'on')
+                 and states('sensor.hot_water_tank_top_pt1000_temperature') | float(999)
+                     < states('input_number.hot_water_start_temperature') | float(0) }}
+            sequence:
+              - action: input_boolean.turn_on
+                target:
+                  entity_id: input_boolean.hot_water_heating_request

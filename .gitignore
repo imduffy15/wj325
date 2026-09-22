@@ -1,0 +1,10 @@
+secrets.yaml
+**/secrets.yaml
+.env
+.env.*
+.esphome/
+.venv/
+__pycache__/
+*.pyc
+wj325-backup.bin
+analysis/irom-disassembly.txt
