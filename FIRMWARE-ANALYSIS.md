@@ -351,8 +351,8 @@ The old immersion-maintenance automation was replaced at the owner's request.
 The deployed `home-assistant/hot_water.yaml` package requests heat after two
 minutes continuously below 45°C and clears demand at 60°C, with adjustable
 thresholds and invalid-input handling. It currently drives only a request
-helper; no boiler actuator is connected. Enable and request reset off after a
-Home Assistant restart. This is not a whole-cylinder hygiene cycle.
+helper; no boiler actuator is connected. After a Home Assistant restart, enable restores its prior setting, request
+resets off, and a fresh two-minute qualification is required. This is not a whole-cylinder hygiene cycle.
 
 An isolated instance using the installed Home Assistant runtime tested the
 actual two-minute delay, cancelled short dips, hysteresis, the stop threshold,

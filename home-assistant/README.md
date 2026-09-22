@@ -22,9 +22,9 @@ the stop threshold must exceed the start threshold.
 The request clears when the input is unavailable, faulty, stale, invalid,
 or automatic heating is disabled. The template checks reporting age against
 three minutes (reevaluated on its normal template schedule, including once per
-minute). The automation also reconciles every 30 seconds. On restart, enable
-and request helpers reset off. After enabling again, a fresh two-minute period
-is required; an interrupted timer is not restored.
+minute). The automation also reconciles every 30 seconds. On restart, the enable helper restores its previous setting and the request
+resets off. If enabled and still below the start threshold, a fresh two-minute
+period is required before requesting heat; an interrupted timer is not restored.
 
 This package **does not operate a boiler or immersion**. It exposes demand
 for the future actuator integration. The previous immersion automation was

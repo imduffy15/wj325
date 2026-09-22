@@ -3,7 +3,7 @@ esphome:
   friendly_name: Hot Water Tank Top
 esp8266:
   board: esp_wroom_02
-  
+
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
@@ -74,7 +74,7 @@ sensor:
       - timeout: 30s
     on_value:
       - component.update: pt1000_voltage
-          
+
   - platform: template
     name: "PT1000 Voltage"
     id: pt1000_voltage

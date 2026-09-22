@@ -4,7 +4,6 @@ input_boolean:
   hot_water_automatic_heating_enabled:
     name: Hot Water Automatic Heating Enabled
     icon: mdi:water-boiler-auto
-    initial: false
   hot_water_heating_request:
     name: Hot Water Heating Request
     icon: mdi:water-boiler
