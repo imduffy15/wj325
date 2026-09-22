@@ -126,8 +126,3 @@ views:
         name: Request heat below
       - entity: input_number.hot_water_stop_temperature
         name: Clear request at
-    - type: markdown
-      content: |-
-        Below the start temperature for **2 minutes** to request heat.
-
-        **Monitoring only:** boiler controls are not connected yet.
