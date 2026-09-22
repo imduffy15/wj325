@@ -64,3 +64,55 @@ recommends storage at least at 60°C.
 
 Home Assistant references: [template delay_on](https://www.home-assistant.io/integrations/template/)
 and [input boolean initialization](https://www.home-assistant.io/integrations/input_boolean/).
+
+## Hot Water dashboard and tank widget
+
+The installed **Hot Water** sidebar dashboard is at `/hot-water/tank`.
+[hot-water-dashboard.yaml](hot-water-dashboard.yaml) contains its complete
+Lovelace configuration. [tank-card.yaml](tank-card.yaml) is the standalone
+widget for reuse on another dashboard.
+
+The widget uses [Slate Heating Card](https://github.com/jouwdan/slate-heating-card)
+installed as a HACS custom Dashboard repository, plus the existing
+[card-mod](https://github.com/thomasloven/lovelace-card-mod) installation.
+Slate version 0.1.0, upstream commit
+`28c749bcf7bab47e6ac95371a2c75d308121a3f2`, was inspected and tested.
+The installed module SHA256 is
+`48b294dd15a51c62790654326e47fd032225b904c07e0ffcb4d3b9f0b62f7ddb`.
+HACS manages the unmodified upstream module at
+`/hacsfiles/slate-heating-card/slate-heating-card.js` and registers the resource.
+No upstream JavaScript is copied into this repository.
+
+Slate supplies the tank layout, temperature labels and tap-to-history actions.
+The card-mod styling turns its separate layers into a continuous vertical
+gradient, using Slate's blue-at-20°C to orange-at-60°C colour scale. These are
+colour limits, not sensor limits or heating thresholds. Between the two probes,
+the colour is an illustration of interpolation, not a measured temperature
+profile or an estimate of usable hot-water volume. Slate's percentage estimate
+is disabled. Missing readings or either probe's fault flag make the tank grey;
+a separate dashboard warning reports fault/unavailable probe entities.
+
+The dashboard also includes a native 24-hour history graph and the request
+helpers. Top history is orange and bottom is blue. The graph display is bounded
+to 0–80°C so old commissioning spikes do not flatten normal readings. Raw
+history is not modified; values outside those bounds remain available through
+the entity's history dialog. Request state is displayed without a toggle, and
+is explicitly separate from actual boiler operation.
+
+To reproduce the dashboard:
+
+1. Add `https://github.com/jouwdan/slate-heating-card` to HACS custom repositories,
+   category **Dashboard**, and install it. Install card-mod if needed.
+2. Refresh the frontend so both custom modules are loaded.
+3. Create a new dashboard and paste `hot-water-dashboard.yaml` into its raw
+   configuration editor, or add `tank-card.yaml` as a manual card elsewhere.
+4. Map the two temperatures and fault entities if your IDs differ. The full
+   dashboard additionally uses the helpers from `hot_water.yaml`.
+
+The CSS targets Slate 0.1.0's `.tank-vessel`, `.tank-layer` and `.tank-profile`
+classes. Recheck the appearance after upstream layout changes. Both desktop
+(1280 px) and phone (390 px) layouts were checked in a real browser, including
+resource loading, gradient rendering, absence of frontend errors and opening
+Home Assistant's native more-info dialog. `tests/check_tank_card.py` checks
+normal, equal-temperature, missing-reading, fault and recovery cases in an
+isolated Home Assistant template environment.

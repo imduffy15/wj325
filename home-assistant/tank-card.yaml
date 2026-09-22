@@ -1,0 +1,73 @@
+# Requires Slate Heating Card and card-mod (both available through HACS).
+# Probe order is top, bottom. Colour interpolation is visual, not a measurement.
+type: custom:slate-heating-card
+name: Hot water tank
+sections:
+  - water
+layout: stacked
+show_header: false
+water_name: Tank temperature
+show_boost: false
+show_schedule: false
+show_tank_estimate: false
+tank_entities:
+  - sensor.hot_water_tank_top_pt1000_temperature
+  - sensor.hot_water_tank_bottom_pt1000_temperature
+card_mod:
+  style: |
+    {% set top = states('sensor.hot_water_tank_top_pt1000_temperature') %}
+    {% set bottom = states('sensor.hot_water_tank_bottom_pt1000_temperature') %}
+    {% set valid = is_number(top) and is_number(bottom)
+       and is_state('binary_sensor.hot_water_tank_top_measurement_problem', 'off')
+       and is_state('binary_sensor.hot_water_tank_bottom_measurement_problem', 'off') %}
+    {% macro colour(value) -%}
+      {% set warmth = [[(value | float(20) - 20) / 40, 0] | max, 1] | min %}
+      rgb({{ (96 + 155 * warmth) | round(0) | int }},
+          {{ (165 - 19 * warmth) | round(0) | int }},
+          {{ (250 - 190 * warmth) | round(0) | int }})
+    {%- endmacro %}
+    ha-card {
+      border-radius: 24px;
+      padding: 24px;
+    }
+    .panel { border: 0; padding: 0; background: transparent; }
+    .tank-profile {
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 24px;
+      margin: 20px 0 8px;
+    }
+    .tank-vessel {
+      min-height: 250px;
+      border-radius: 40px;
+      padding: 0;
+      gap: 0;
+      border: 2px solid var(--divider-color);
+      box-shadow: inset 8px 0 18px rgba(255,255,255,.12),
+                  inset -8px 0 18px rgba(0,0,0,.12);
+      {% if valid %}
+      background: linear-gradient(180deg, {{ colour(top) }} 0%, {{ colour(bottom) }} 100%);
+      {% else %}
+      background: var(--disabled-text-color, #777);
+      {% endif %}
+    }
+    .tank-layer { background: transparent !important; }
+    .tank-values {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .tank-value { min-height: 60px; padding-left: 0; }
+    .tank-number { font-size: clamp(25px, 6vw, 36px); }
+    .tank-profile::after {
+      content: "Colour between the probes is estimated.";
+      grid-column: 1 / -1;
+      color: var(--secondary-text-color);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+    @media (max-width: 380px) {
+      .tank-profile { grid-template-columns: 78px minmax(0, 1fr); gap: 16px; }
+      ha-card { padding: 18px; }
+    }

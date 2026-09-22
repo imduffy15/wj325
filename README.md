@@ -42,8 +42,9 @@ DNS-redirection procedure and image compatibility checks.
   disassembly, fitting results and historical configurations.
 - [Stock firmware](firmware/README.md): executable image and numeric calibration
   with personal saved settings excluded.
-- [Home Assistant package](home-assistant/README.md): consistent entity IDs and
-  a heating-request automation, ready for future boiler integration.
+- [Home Assistant package and dashboard](home-assistant/README.md): consistent
+  entity IDs, heating-request automation, and a Slate tank widget with a live
+  top-to-bottom colour gradient.
 
 The detailed notes are chronological. Later findings supersede early hypotheses
 and statements that a flash or calibration had not yet been performed.
